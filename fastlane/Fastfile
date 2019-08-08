@@ -1,4 +1,4 @@
-default_platform(:macOS)
+default_platform(:mac)
 
 # Fastlane runs all built in actions from one directory above where the Fastfile lives
 # so make sure all the paths are relative in that regard.
@@ -7,7 +7,6 @@ default_platform(:macOS)
 before_all do
   update_fastlane
 end
-
 
 desc "Initalise the project."
 lane :setup do
@@ -27,6 +26,19 @@ lane :format do
   exec("swiftformat ../")
 end
 
+desc "Synx to format the folder structure to be idendical between file-system and xcode project."
+lane :synx do
+  exec("synx -p ../Zusammen.xcodeproj")
+end
+
+
+desc "Run checks for liniting, formatting, folder structure - all in one go."
+lane :check do
+  synx
+  format
+  lint
+end
+
 desc "Generates coverage for the project using xcov."
 lane :cov do
   xcov(workspace: "Zusammen.xcworkspace", scheme: "Zusammen", output_directory: "buo;d")
@@ -43,4 +55,4 @@ end
 desc "Bump the version number of the app, only the minor version."
   lane :bump_version do
     increment_version_number(bump_type: "minor")
-  end
+end
