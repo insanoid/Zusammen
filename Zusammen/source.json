@@ -1,0 +1,10 @@
+{
+    "extensions": [{
+        "name": "xTextHandler",
+        "url": "https://itunes.apple.com/app/id1163761963",
+        "description": "Makes Xcode stop, collaborate and listen.",
+        "screenshot": "http://raw.github.com/me/awesome-screenshot.png"
+        "tags": ["text-formatting", "editing"],
+        "download-type": "app_store_link"
+    }]
+}

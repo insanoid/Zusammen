@@ -1,0 +1,46 @@
+default_platform(:macOS)
+
+# Fastlane runs all built in actions from one directory above where the Fastfile lives
+# so make sure all the paths are relative in that regard.
+
+
+before_all do
+  update_fastlane
+end
+
+
+desc "Initalise the project."
+lane :setup do
+  cocoapods
+  brew(command:"install swiftlint")
+  brew(command:"install swiftformat")
+end
+
+desc "Does a static analysis of the project. Configure the options in .swiftlint.yml"
+lane :lint do
+  swiftlint(mode: :autocorrect, config_file: '.swiftlint.yml')
+	swiftlint(mode: :lint, strict: false, config_file: '.swiftlint.yml')
+end
+
+desc "Run swiftformat and format all the files."
+lane :format do
+  exec("swiftformat ../")
+end
+
+desc "Generates coverage for the project using xcov."
+lane :cov do
+  xcov(workspace: "Zusammen.xcworkspace", scheme: "Zusammen", output_directory: "buo;d")
+end
+
+desc "Validates the pod file and find if there are any updates."
+lane :podcheck do
+  UI.message("Running cocoapods outdated...")
+  log, s = Open3.capture2("pod outdated")
+  UI.message(log.partition("Updating spec repo `master`\n").last)
+  outdated_packages = log.partition('Analyzing dependencies').last
+end
+
+desc "Bump the version number of the app, only the minor version."
+  lane :bump_version do
+    increment_version_number(bump_type: "minor")
+  end

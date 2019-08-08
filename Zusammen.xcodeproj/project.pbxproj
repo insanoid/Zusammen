@@ -12,6 +12,11 @@
 		9381365822FC2AB600BC6C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9381365722FC2AB600BC6C0F /* Assets.xcassets */; };
 		9381365B22FC2AB600BC6C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9381365922FC2AB600BC6C0F /* Main.storyboard */; };
 		9381366722FC2AB700BC6C0F /* ZusammenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381366622FC2AB700BC6C0F /* ZusammenTests.swift */; };
+		9381367222FC2B1F00BC6C0F /* source.json in Resources */ = {isa = PBXBuildFile; fileRef = 9381367122FC2B1F00BC6C0F /* source.json */; };
+		9381367622FC4EBA00BC6C0F /* ExtensionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381367422FC4EBA00BC6C0F /* ExtensionList.swift */; };
+		9381367722FC4EBA00BC6C0F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381367522FC4EBA00BC6C0F /* Extension.swift */; };
+		9381367A22FC735D00BC6C0F /* ExtensionListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381367922FC735D00BC6C0F /* ExtensionListLoader.swift */; };
+		F6400DB7E47D8E909C1BBDCF /* Pods_Zusammen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF2EF2BC0E69499AC965732 /* Pods_Zusammen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29581008347966C9FC10BB74 /* Pods-Zusammen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zusammen.release.xcconfig"; path = "Target Support Files/Pods-Zusammen/Pods-Zusammen.release.xcconfig"; sourceTree = "<group>"; };
 		9381365022FC2AB300BC6C0F /* Zusammen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zusammen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9381365322FC2AB300BC6C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9381365522FC2AB300BC6C0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +41,12 @@
 		9381366222FC2AB700BC6C0F /* ZusammenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZusammenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9381366622FC2AB700BC6C0F /* ZusammenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZusammenTests.swift; sourceTree = "<group>"; };
 		9381366822FC2AB700BC6C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9381367122FC2B1F00BC6C0F /* source.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = source.json; sourceTree = "<group>"; };
+		9381367422FC4EBA00BC6C0F /* ExtensionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionList.swift; sourceTree = "<group>"; };
+		9381367522FC4EBA00BC6C0F /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		9381367922FC735D00BC6C0F /* ExtensionListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionListLoader.swift; sourceTree = "<group>"; };
+		9EF2EF2BC0E69499AC965732 /* Pods_Zusammen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zusammen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6CE620CC31215EDBDB30DF9 /* Pods-Zusammen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zusammen.debug.xcconfig"; path = "Target Support Files/Pods-Zusammen/Pods-Zusammen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6400DB7E47D8E909C1BBDCF /* Pods_Zusammen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,8 @@
 				9381365222FC2AB300BC6C0F /* Zusammen */,
 				9381366522FC2AB700BC6C0F /* ZusammenTests */,
 				9381365122FC2AB300BC6C0F /* Products */,
+				BD5616B74B7CE6048B7052BC /* Pods */,
+				F2A1CFEECE4FDF2825241E94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,12 +91,15 @@
 		9381365222FC2AB300BC6C0F /* Zusammen */ = {
 			isa = PBXGroup;
 			children = (
+				9381367822FC61F400BC6C0F /* Network */,
+				9381367322FC4D4C00BC6C0F /* Core */,
 				9381365322FC2AB300BC6C0F /* AppDelegate.swift */,
 				9381365522FC2AB300BC6C0F /* ViewController.swift */,
 				9381365722FC2AB600BC6C0F /* Assets.xcassets */,
 				9381365922FC2AB600BC6C0F /* Main.storyboard */,
 				9381365C22FC2AB600BC6C0F /* Info.plist */,
 				9381365D22FC2AB600BC6C0F /* Zusammen.entitlements */,
+				9381367122FC2B1F00BC6C0F /* source.json */,
 			);
 			path = Zusammen;
 			sourceTree = "<group>";
@@ -95,6 +113,41 @@
 			path = ZusammenTests;
 			sourceTree = "<group>";
 		};
+		9381367322FC4D4C00BC6C0F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9381367422FC4EBA00BC6C0F /* ExtensionList.swift */,
+				9381367522FC4EBA00BC6C0F /* Extension.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9381367822FC61F400BC6C0F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9381367922FC735D00BC6C0F /* ExtensionListLoader.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BD5616B74B7CE6048B7052BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6CE620CC31215EDBDB30DF9 /* Pods-Zusammen.debug.xcconfig */,
+				29581008347966C9FC10BB74 /* Pods-Zusammen.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F2A1CFEECE4FDF2825241E94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9EF2EF2BC0E69499AC965732 /* Pods_Zusammen.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9381366B22FC2AB700BC6C0F /* Build configuration list for PBXNativeTarget "Zusammen" */;
 			buildPhases = (
+				3900AD58A9DB22ECC0B90D71 /* [CP] Check Pods Manifest.lock */,
 				9381364C22FC2AB300BC6C0F /* Sources */,
 				9381364D22FC2AB300BC6C0F /* Frameworks */,
 				9381364E22FC2AB300BC6C0F /* Resources */,
+				DCECCD1261081C50ED70C01D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9381365822FC2AB600BC6C0F /* Assets.xcassets in Resources */,
+				9381367222FC2B1F00BC6C0F /* source.json in Resources */,
 				9381365B22FC2AB600BC6C0F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,13 +246,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3900AD58A9DB22ECC0B90D71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zusammen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCECCD1261081C50ED70C01D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zusammen/Pods-Zusammen-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zusammen/Pods-Zusammen-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zusammen/Pods-Zusammen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9381364C22FC2AB300BC6C0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9381365622FC2AB300BC6C0F /* ViewController.swift in Sources */,
+				9381367A22FC735D00BC6C0F /* ExtensionListLoader.swift in Sources */,
+				9381367622FC4EBA00BC6C0F /* ExtensionList.swift in Sources */,
 				9381365422FC2AB300BC6C0F /* AppDelegate.swift in Sources */,
+				9381367722FC4EBA00BC6C0F /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +448,7 @@
 		};
 		9381366C22FC2AB700BC6C0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6CE620CC31215EDBDB30DF9 /* Pods-Zusammen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Zusammen/Zusammen.entitlements;
@@ -366,6 +468,7 @@
 		};
 		9381366D22FC2AB700BC6C0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29581008347966C9FC10BB74 /* Pods-Zusammen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Zusammen/Zusammen.entitlements;
