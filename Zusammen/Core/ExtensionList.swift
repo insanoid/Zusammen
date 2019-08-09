@@ -14,6 +14,10 @@ struct ExtensionList: Codable {
 
     var extensions: [Extension]
 
+    init(extensions: [Extension]) {
+        self.extensions = extensions
+    }
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         extensions = try container.decode([Extension].self, forKey: .extensions)

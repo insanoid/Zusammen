@@ -30,6 +30,16 @@ Does a static analysis of the project. Configure the options in .swiftlint.yml
 fastlane format
 ```
 Run swiftformat and format all the files.
+### doc
+```
+fastlane doc
+```
+Generate the documentation for the project.
+### check
+```
+fastlane check
+```
+Run checks for liniting, formatting, folder structure - all in one go.
 ### cov
 ```
 fastlane cov

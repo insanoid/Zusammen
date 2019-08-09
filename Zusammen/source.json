@@ -1,10 +1,21 @@
 {
     "extensions": [{
         "name": "xTextHandler",
-        "url": "https://itunes.apple.com/app/id1163761963",
-        "description": "Makes Xcode stop, collaborate and listen.",
-        "screenshot": "http://raw.github.com/me/awesome-screenshot.png"
+        "download_url": "https://itunes.apple.com/app/id1163761963",
+        "description": "Xcode Source Editor Extension based tools to improve the text editing experience of Xcode 8 and provide extensions with simple code.",
+        "screenshot": "http://raw.github.com/me/awesome-screenshot.png",
         "tags": ["text-formatting", "editing"],
-        "download-type": "app_store_link"
-    }]
+        "download_type": "app_store_link",
+        "readme_url": "https://github.com/cyanzhong/xTextHandler"
+    },
+    {
+        "name": "quickType",
+        "download_url": "https://itunes.apple.com/us/app/paste-json-as-code-quicktype/id1330801220?mt=12",
+        "description": "quicktype infers types from sample JSON data, then outputs strongly typed models and serializers for working with that data in Swift, Objective-C, C++, Java and more. This extension adds native quicktype support to Xcode 9.",
+        "screenshot": "https://github.com/quicktype/quicktype-xcode/raw/master/media/demo.gif",
+        "tags": ["json", "model", "codeable", "marshalling"],
+        "github_url": "https://github.com/cyanzhong/xTextHandler",
+        "download_type": "app_store_link"
+    }
+    ]
 }

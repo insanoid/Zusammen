@@ -31,6 +31,10 @@ lane :synx do
   exec("synx -p ../Zusammen.xcodeproj")
 end
 
+desc "Generate the documentation for the project."
+lane :doc do
+  jazzy
+end
 
 desc "Run checks for liniting, formatting, folder structure - all in one go."
 lane :check do

@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9348E6BD22FDD8ED0090F0DE /* ExtensionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */; };
 		9381365422FC2AB300BC6C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381365322FC2AB300BC6C0F /* AppDelegate.swift */; };
-		9381365622FC2AB300BC6C0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381365522FC2AB300BC6C0F /* ViewController.swift */; };
+		9381365622FC2AB300BC6C0F /* ExtensionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381365522FC2AB300BC6C0F /* ExtensionsListViewController.swift */; };
 		9381365822FC2AB600BC6C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9381365722FC2AB600BC6C0F /* Assets.xcassets */; };
 		9381365B22FC2AB600BC6C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9381365922FC2AB600BC6C0F /* Main.storyboard */; };
 		9381366722FC2AB700BC6C0F /* ZusammenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381366622FC2AB700BC6C0F /* ZusammenTests.swift */; };
@@ -31,9 +32,10 @@
 
 /* Begin PBXFileReference section */
 		29581008347966C9FC10BB74 /* Pods-Zusammen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zusammen.release.xcconfig"; path = "Target Support Files/Pods-Zusammen/Pods-Zusammen.release.xcconfig"; sourceTree = "<group>"; };
+		9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCell.swift; sourceTree = "<group>"; };
 		9381365022FC2AB300BC6C0F /* Zusammen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zusammen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9381365322FC2AB300BC6C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9381365522FC2AB300BC6C0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9381365522FC2AB300BC6C0F /* ExtensionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsListViewController.swift; sourceTree = "<group>"; };
 		9381365722FC2AB600BC6C0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9381365A22FC2AB600BC6C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9381365C22FC2AB600BC6C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,11 +97,12 @@
 				9381367822FC61F400BC6C0F /* Network */,
 				9381365322FC2AB300BC6C0F /* AppDelegate.swift */,
 				9381365722FC2AB600BC6C0F /* Assets.xcassets */,
+				9381365522FC2AB300BC6C0F /* ExtensionsListViewController.swift */,
 				9381365C22FC2AB600BC6C0F /* Info.plist */,
 				9381365922FC2AB600BC6C0F /* Main.storyboard */,
-				9381365522FC2AB300BC6C0F /* ViewController.swift */,
 				9381365D22FC2AB600BC6C0F /* Zusammen.entitlements */,
 				9381367122FC2B1F00BC6C0F /* source.json */,
+				9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */,
 			);
 			path = Zusammen;
 			sourceTree = "<group>";
@@ -136,7 +139,6 @@
 				C6CE620CC31215EDBDB30DF9 /* Pods-Zusammen.debug.xcconfig */,
 				29581008347966C9FC10BB74 /* Pods-Zusammen.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -293,7 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9381365622FC2AB300BC6C0F /* ViewController.swift in Sources */,
+				9381365622FC2AB300BC6C0F /* ExtensionsListViewController.swift in Sources */,
+				9348E6BD22FDD8ED0090F0DE /* ExtensionCell.swift in Sources */,
 				9381367A22FC735D00BC6C0F /* ExtensionListLoader.swift in Sources */,
 				9381367622FC4EBA00BC6C0F /* ExtensionList.swift in Sources */,
 				9381365422FC2AB300BC6C0F /* AppDelegate.swift in Sources */,
@@ -452,7 +455,6 @@
 			baseConfigurationReference = C6CE620CC31215EDBDB30DF9 /* Pods-Zusammen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Zusammen/Zusammen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UYGU8PDBPS;
@@ -461,6 +463,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.karthik.Zusammen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -472,7 +475,6 @@
 			baseConfigurationReference = 29581008347966C9FC10BB74 /* Pods-Zusammen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Zusammen/Zusammen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UYGU8PDBPS;
@@ -481,6 +483,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.karthik.Zusammen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

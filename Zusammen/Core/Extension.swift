@@ -12,6 +12,8 @@ struct Extension: Codable {
         case name
         case downloadType = "download_type"
         case descriptionValue = "description"
+        case readmeUrl = "readme_url"
+        case downloadUrl = "download_url"
         case screenshot
         case url
         case tags
@@ -21,8 +23,10 @@ struct Extension: Codable {
     var downloadType: String
     var descriptionValue: String
     var screenshot: String?
-    var url: String
+    var url: String?
+    var downloadUrl: String?
     var tags: [String]?
+    var readmeUrl: String?
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -30,7 +34,9 @@ struct Extension: Codable {
         downloadType = try container.decode(String.self, forKey: .downloadType)
         descriptionValue = try container.decode(String.self, forKey: .descriptionValue)
         screenshot = try container.decodeIfPresent(String.self, forKey: .screenshot)
-        url = try container.decode(String.self, forKey: .url)
+        url = try container.decodeIfPresent(String.self, forKey: .url)
+        readmeUrl = try container.decodeIfPresent(String.self, forKey: .readmeUrl)
         tags = try container.decodeIfPresent([String].self, forKey: .tags)
+        downloadUrl = try container.decodeIfPresent(String.self, forKey: .downloadUrl)
     }
 }
