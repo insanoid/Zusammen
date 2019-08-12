@@ -14,13 +14,13 @@ import Cocoa
 class ExtensionCell: NSTableCellView {
 
     static var identifier = NSUserInterfaceItemIdentifier(rawValue: "extensionCellIdentifier")
-    static var height = 55
+    static var height = 70
 
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var taglineLabel: NSTextField!
     @IBOutlet weak var thumbnailImageView: NSImageView!
     
-    private var currentExtension: Extension
+    private var currentExtension: Extension?
     
     class func view(tableView: NSTableView,
                     owner: AnyObject?,
@@ -46,8 +46,14 @@ class ExtensionCell: NSTableCellView {
     }
     
     func updateUI() {
-        self.titleLabel.stringValue = self.currentExtension.name
-        self.taglineLabel.stringValue = self.currentExtension.descriptionValue
+        guard let extensionValue = self.currentExtension else {
+            return
+        }
+        self.titleLabel.textColor = .textColor
+        self.taglineLabel.textColor = .textColor
+        self.taglineLabel.alphaValue = 0.7
+        self.titleLabel.stringValue = extensionValue.name
+        self.taglineLabel.stringValue = extensionValue.descriptionValue
     }
     
 }

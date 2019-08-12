@@ -40,7 +40,7 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
 
     func loadData() {
         extensionsList = try! ExtensionListLoader.allExtensions()
-        currentExtension = extensionsList.extensions.first
+        currentExtension = extensionsList?.extensions.first
     }
 }
 
@@ -70,7 +70,7 @@ extension ExtensionsListViewController {
     }
     
     @IBAction func openGithubLinkAction(_: Any) {
-        let url = URL(string: self.currentExtension!.url!)!
+        let url = URL(string: self.currentExtension!.readmeUrl!)!
         NSWorkspace.shared.open(url)
     }
     
@@ -92,17 +92,17 @@ extension ExtensionsListViewController: NSTableViewDelegate, NSTableViewDataSour
     func tableView(_ tableView: NSTableView,
                    viewFor tableColumn: NSTableColumn?,
                    row: Int) -> NSView? {
-        return SensorCell.view(tableView: tableView, owner: self, subject: sensors[row])
+        return ExtensionCell.view(tableView: tableView, owner: self, subject: extensionsList?.extensions[row] as AnyObject?)
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return CGFloat.init(SensorCell.height)
+        return CGFloat.init(ExtensionCell.height)
     }
     
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        if row < sensors.count {
-            let sensor = sensors[row]
-            activate(sensor)
+        if row < extensionsList?.extensions.count ?? 0 {
+            let extensionSelected = extensionsList?.extensions[row]
+            updateCurrentExtensionUI(selectedExtennsion: extensionSelected)
         }
         return true
     }

@@ -3,19 +3,55 @@
         "name": "xTextHandler",
         "download_url": "https://itunes.apple.com/app/id1163761963",
         "description": "Xcode Source Editor Extension based tools to improve the text editing experience of Xcode 8 and provide extensions with simple code.",
-        "screenshot": "http://raw.github.com/me/awesome-screenshot.png",
         "tags": ["text-formatting", "editing"],
         "download_type": "app_store_link",
-        "readme_url": "https://github.com/cyanzhong/xTextHandler"
+        "readme_url": "https://github.com/cyanzhong/xTextHandler/blob/master/README.md",
+        "source_url": "https://github.com/cyanzhong/xTextHandler"
     },
     {
         "name": "quickType",
-        "download_url": "https://itunes.apple.com/us/app/paste-json-as-code-quicktype/id1330801220?mt=12",
+        "download_url": "https://itunes.apple.com/app/id1330801220",
         "description": "quicktype infers types from sample JSON data, then outputs strongly typed models and serializers for working with that data in Swift, Objective-C, C++, Java and more. This extension adds native quicktype support to Xcode 9.",
-        "screenshot": "https://github.com/quicktype/quicktype-xcode/raw/master/media/demo.gif",
-        "tags": ["json", "model", "codeable", "marshalling"],
-        "github_url": "https://github.com/cyanzhong/xTextHandler",
+        "tags": ["json", "model", "codeable", "marshalling", "swift"],
+        "source_url": "https://https://github.com/quicktype/quicktype-xcode",
+        "readme_url": "https://github.com/quicktype/quicktype-xcode/blob/master/README.md",
         "download_type": "app_store_link"
+    },
+    {
+        "name": "Import",
+        "download_url": "https://itunes.apple.com/app/id1167060791",
+        "description": "Xcode extension for adding imports from anywhere in the code.",
+        "tags": ["swift", "import", "headers"],
+        "source_url": "https://github.com/markohlebar/Import",
+        "readme_url": "https://github.com/markohlebar/Import/blob/master/README.md",
+        "download_type": "app_store_link"
+    },
+    {
+        "name": "SwiftInitializerGenerator",
+        "download_url": "https://github.com/Bouke/SwiftInitializerGenerator",
+        "description": "Xcode Extension to generate a Swift initializer based on the lines you've selected.",
+        "tags": ["swift", "initializer"],
+        "source_url": "https://github.com/Bouke/SwiftInitializerGenerator",
+        "readme_url": "https://github.com/Bouke/SwiftInitializerGenerator/blob/master/README.md",
+        "download_type": "github_source"
+    },
+    {
+        "name": "XcodeWay",
+        "download_url": "https://github.com/onmyway133/XcodeWay/releases",
+        "description": "Xcode Extension that helps navigating to many xocde places easier.",
+        "tags": ["xcode", "shortcuts"],
+        "source_url": "https://github.com/onmyway133/XcodeWay",
+        "readme_url": "https://github.com/onmyway133/XcodeWay/blob/master/README.md",
+        "download_type": "github_releases"
+    },
+    {
+        "name": "SwiftAI",
+        "download_url": "https://github.com/hhfa008/SwiftAI",
+        "description": "SwiftAI can generate Model class from JSON now. Codable and HandyJSON is supported.",
+        "tags": ["swift", "model", "json"],
+        "source_url": "https://github.com/hhfa008/SwiftAI",
+        "readme_url": "https://github.com/hhfa008/SwiftAI/blob/master/README.md",
+        "download_type": "github_source"
     }
     ]
 }

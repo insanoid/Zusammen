@@ -14,8 +14,7 @@ struct Extension: Codable {
         case descriptionValue = "description"
         case readmeUrl = "readme_url"
         case downloadUrl = "download_url"
-        case screenshot
-        case url
+        case sourceUrl = "source_url"
         case tags
     }
 
@@ -23,7 +22,7 @@ struct Extension: Codable {
     var downloadType: String
     var descriptionValue: String
     var screenshot: String?
-    var url: String?
+    var sourceUrl: String?
     var downloadUrl: String?
     var tags: [String]?
     var readmeUrl: String?
@@ -33,8 +32,7 @@ struct Extension: Codable {
         name = try container.decode(String.self, forKey: .name)
         downloadType = try container.decode(String.self, forKey: .downloadType)
         descriptionValue = try container.decode(String.self, forKey: .descriptionValue)
-        screenshot = try container.decodeIfPresent(String.self, forKey: .screenshot)
-        url = try container.decodeIfPresent(String.self, forKey: .url)
+        sourceUrl = try container.decodeIfPresent(String.self, forKey: .sourceUrl)
         readmeUrl = try container.decodeIfPresent(String.self, forKey: .readmeUrl)
         tags = try container.decodeIfPresent([String].self, forKey: .tags)
         downloadUrl = try container.decodeIfPresent(String.self, forKey: .downloadUrl)
