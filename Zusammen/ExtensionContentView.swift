@@ -45,6 +45,14 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
         }
         self.titleLabel.stringValue = currentExtension.name
         self.taglineLabel.stringValue = currentExtension.descriptionValue
+        if let tags = currentExtension.tags {
+            self.tagsLabel.stringValue = tags.map({ (value) -> String in
+                value.uppercased()
+            }).joined(separator: " · ")
+        } else {
+            self.tagsLabel.stringValue = ""
+        }
+       
         if let contentPath = currentExtension.readmeUrl, let contentURL = URL(string: contentPath) {
             openContentPage(path: contentURL)
         }
@@ -93,4 +101,9 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
     @IBAction func openAppStoreLinkAction(_: Any) {
         openAppStore(identifier: self.currentExtension!.downloadUrl!)
     }
+    
+    @IBAction func openExtensionsSystemPreferencePanel(_: Any) {
+        NSWorkspace.shared.open(URL(fileURLWithPath: "/System/Library/PreferencePanes/Extensions.prefPane"))
+    }
+
 }

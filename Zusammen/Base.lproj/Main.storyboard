@@ -763,12 +763,18 @@
                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
+                                                                        <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="1ca-uJ-fNJ">
+                                                                            <rect key="frame" x="8" y="-2" width="309" height="5"/>
+                                                                        </box>
                                                                     </subviews>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="1ca-uJ-fNJ" secondAttribute="trailing" id="4FH-za-lAj"/>
                                                                         <constraint firstItem="hok-fl-w6x" firstAttribute="leading" secondItem="ife-7S-hV0" secondAttribute="leading" constant="8" id="8VN-Sb-Sh3"/>
+                                                                        <constraint firstItem="1ca-uJ-fNJ" firstAttribute="leading" secondItem="o2a-k3-TH2" secondAttribute="leading" id="I2Q-w1-tfb"/>
                                                                         <constraint firstItem="o2a-k3-TH2" firstAttribute="leading" secondItem="ife-7S-hV0" secondAttribute="leading" constant="8" id="Lng-uS-BOg"/>
                                                                         <constraint firstAttribute="trailing" secondItem="o2a-k3-TH2" secondAttribute="trailing" constant="9" id="Ocx-7y-XFv"/>
                                                                         <constraint firstItem="hok-fl-w6x" firstAttribute="top" secondItem="ife-7S-hV0" secondAttribute="top" constant="8" id="hnl-0V-djx"/>
+                                                                        <constraint firstItem="1ca-uJ-fNJ" firstAttribute="bottom" secondItem="o2a-k3-TH2" secondAttribute="bottom" constant="4" id="jYb-1d-pZQ"/>
                                                                         <constraint firstItem="o2a-k3-TH2" firstAttribute="top" secondItem="hok-fl-w6x" secondAttribute="bottom" constant="3" id="lHu-I7-m0Q"/>
                                                                         <constraint firstAttribute="trailing" secondItem="hok-fl-w6x" secondAttribute="trailing" constant="9" id="oas-B2-Lnu"/>
                                                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="o2a-k3-TH2" secondAttribute="bottom" constant="2" id="tjA-gJ-B6u"/>
@@ -817,9 +823,9 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-gZ-UYZ">
-                                                <rect key="frame" x="14" y="405" width="483" height="50"/>
+                                                <rect key="frame" x="14" y="439" width="483" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="MVE-DB-xBj"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="MVE-DB-xBj"/>
                                                 </constraints>
                                                 <textFieldCell key="cell" title="Label" id="77z-6t-J66">
                                                     <font key="font" size="13" name="SanFranciscoText-Regular"/>
@@ -828,7 +834,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSR-Fd-fyO">
-                                                <rect key="frame" x="16" y="44" width="479" height="353"/>
+                                                <rect key="frame" x="16" y="44" width="479" height="387"/>
                                                 <wkWebViewConfiguration key="configuration">
                                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                     <wkPreferences key="preferences"/>
@@ -843,6 +849,9 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="openAppStoreLinkAction:" target="EgR-K0-d8n" id="Wtt-YD-X4d"/>
+                                                </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ixw-Bw-HRm">
                                                 <rect key="frame" x="115" y="7" width="142" height="32"/>
@@ -853,6 +862,9 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="openGithubLinkAction:" target="EgR-K0-d8n" id="XqU-Dy-nIa"/>
+                                                </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hCi-BX-wwd">
                                                 <rect key="frame" x="314" y="7" width="187" height="32"/>
@@ -863,17 +875,20 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="openExtensionsSystemPreferencePanel:" target="EgR-K0-d8n" id="BpD-61-mzX"/>
+                                                </connections>
                                             </button>
                                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ob3-n2-O4c">
-                                                <rect key="frame" x="16" y="461" width="479" height="5"/>
+                                                <rect key="frame" x="16" y="465" width="479" height="5"/>
                                             </box>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ob2-4A-hbd">
-                                                <rect key="frame" x="14" y="469" width="483" height="19"/>
+                                                <rect key="frame" x="14" y="473" width="483" height="15"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="19" id="FUD-Ce-tpL"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="18" id="FUD-Ce-tpL"/>
                                                 </constraints>
                                                 <textFieldCell key="cell" title="Label" id="20b-R8-YiQ">
-                                                    <font key="font" size="13" name="SanFranciscoText-Bold"/>
+                                                    <font key="font" size="10" name="SanFranciscoText-Bold"/>
                                                     <color key="textColor" name="linkColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="systemBrownColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
@@ -904,7 +919,10 @@
                                             <constraint firstItem="ob2-4A-hbd" firstAttribute="width" secondItem="wKk-94-zHu" secondAttribute="width" id="u0u-eW-Q1q"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="githubButton" destination="Ixw-Bw-HRm" id="zGk-Et-Put"/>
+                                            <outlet property="installButton" destination="gw2-22-RWP" id="M52-2Q-efu"/>
                                             <outlet property="taglineLabel" destination="Oea-gZ-UYZ" id="UA6-DZ-NJA"/>
+                                            <outlet property="tagsLabel" destination="ob2-4A-hbd" id="TG5-F0-W8h"/>
                                             <outlet property="titleLabel" destination="wKk-94-zHu" id="74g-9A-HRn"/>
                                             <outlet property="webView" destination="PSR-Fd-fyO" id="h09-lB-Wvp"/>
                                         </connections>

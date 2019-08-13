@@ -22,11 +22,6 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
         super.viewDidLoad()
         loadData()
     }
-
-    @IBAction func openExtensionsSystemPreferencePanel(_: Any) {
-        NSWorkspace.shared.open(URL(fileURLWithPath: "/System/Library/PreferencePanes/Extensions.prefPane"))
-    }
-
     func loadData() {
         extensionsList = try! ExtensionListLoader.allExtensions()
         currentExtension = extensionsList?.extensions.first
