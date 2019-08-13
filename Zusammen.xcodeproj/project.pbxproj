@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9348E6BD22FDD8ED0090F0DE /* ExtensionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */; };
+		934F65D82302FB04006EA517 /* placeholder.html in Resources */ = {isa = PBXBuildFile; fileRef = 934F65D72302FB04006EA517 /* placeholder.html */; };
+		934F65D92302FB04006EA517 /* placeholder.html in Resources */ = {isa = PBXBuildFile; fileRef = 934F65D72302FB04006EA517 /* placeholder.html */; };
 		9381365422FC2AB300BC6C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381365322FC2AB300BC6C0F /* AppDelegate.swift */; };
 		9381365622FC2AB300BC6C0F /* ExtensionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381365522FC2AB300BC6C0F /* ExtensionsListViewController.swift */; };
 		9381365822FC2AB600BC6C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9381365722FC2AB600BC6C0F /* Assets.xcassets */; };
@@ -34,6 +36,7 @@
 /* Begin PBXFileReference section */
 		29581008347966C9FC10BB74 /* Pods-Zusammen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zusammen.release.xcconfig"; path = "Target Support Files/Pods-Zusammen/Pods-Zusammen.release.xcconfig"; sourceTree = "<group>"; };
 		9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCell.swift; sourceTree = "<group>"; };
+		934F65D72302FB04006EA517 /* placeholder.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = placeholder.html; sourceTree = "<group>"; };
 		9381365022FC2AB300BC6C0F /* Zusammen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zusammen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9381365322FC2AB300BC6C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9381365522FC2AB300BC6C0F /* ExtensionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsListViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +75,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		934F65D52302FA8B006EA517 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */,
+				93BF48B623022E25008BF88C /* ExtensionContentView.swift */,
+				9381365522FC2AB300BC6C0F /* ExtensionsListViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		934F65D62302FAA0006EA517 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				9381365322FC2AB300BC6C0F /* AppDelegate.swift */,
+				9381365722FC2AB600BC6C0F /* Assets.xcassets */,
+				9381365C22FC2AB600BC6C0F /* Info.plist */,
+				9381365922FC2AB600BC6C0F /* Main.storyboard */,
+				9381365D22FC2AB600BC6C0F /* Zusammen.entitlements */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		9381364722FC2AB300BC6C0F = {
 			isa = PBXGroup;
 			children = (
@@ -97,15 +122,10 @@
 			children = (
 				9381367322FC4D4C00BC6C0F /* Core */,
 				9381367822FC61F400BC6C0F /* Network */,
-				9381365322FC2AB300BC6C0F /* AppDelegate.swift */,
-				9381365722FC2AB600BC6C0F /* Assets.xcassets */,
-				9381365522FC2AB300BC6C0F /* ExtensionsListViewController.swift */,
-				9381365C22FC2AB600BC6C0F /* Info.plist */,
-				9381365922FC2AB600BC6C0F /* Main.storyboard */,
-				9381365D22FC2AB600BC6C0F /* Zusammen.entitlements */,
+				934F65D62302FAA0006EA517 /* Support */,
+				934F65D52302FA8B006EA517 /* UI */,
+				934F65D72302FB04006EA517 /* placeholder.html */,
 				9381367122FC2B1F00BC6C0F /* source.json */,
-				9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */,
-				93BF48B623022E25008BF88C /* ExtensionContentView.swift */,
 			);
 			path = Zusammen;
 			sourceTree = "<group>";
@@ -238,6 +258,7 @@
 			files = (
 				9381365822FC2AB600BC6C0F /* Assets.xcassets in Resources */,
 				9381367222FC2B1F00BC6C0F /* source.json in Resources */,
+				934F65D82302FB04006EA517 /* placeholder.html in Resources */,
 				9381365B22FC2AB600BC6C0F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934F65D92302FB04006EA517 /* placeholder.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UYGU8PDBPS;
-				INFOPLIST_FILE = Zusammen/Info.plist;
+				INFOPLIST_FILE = Zusammen/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -482,7 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UYGU8PDBPS;
-				INFOPLIST_FILE = Zusammen/Info.plist;
+				INFOPLIST_FILE = Zusammen/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

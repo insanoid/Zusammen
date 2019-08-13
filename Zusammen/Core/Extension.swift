@@ -18,6 +18,13 @@ struct Extension: Codable {
         case tags
     }
 
+    /// Installation type for the extensions.
+    enum InstallationType: String {
+        case appleStore = "app_store"
+        case githubSource = "github_source"
+        case githubRelease = "github_release"
+    }
+
     var name: String
     var downloadType: String
     var descriptionValue: String

@@ -1,7 +1,7 @@
 {
     "extensions": [{
         "name": "xTextHandler",
-        "download_url": "https://itunes.apple.com/app/id1163761963",
+        "download_url": "1163761963",
         "description": "Xcode Source Editor Extension based tools to improve the text editing experience of Xcode 8 and provide extensions with simple code.",
         "tags": ["text-formatting", "editing"],
         "download_type": "app_store_link",
@@ -10,7 +10,7 @@
     },
     {
         "name": "quickType",
-        "download_url": "https://itunes.apple.com/app/id1330801220",
+        "download_url": "1330801220",
         "description": "quicktype infers types from sample JSON data, then outputs strongly typed models and serializers for working with that data in Swift, Objective-C, C++, Java and more. This extension adds native quicktype support to Xcode 9.",
         "tags": ["json", "model", "codeable", "marshalling", "swift"],
         "source_url": "https://https://github.com/quicktype/quicktype-xcode",
@@ -19,7 +19,7 @@
     },
     {
         "name": "Import",
-        "download_url": "https://itunes.apple.com/app/id1167060791",
+        "download_url": "1167060791",
         "description": "Xcode extension for adding imports from anywhere in the code.",
         "tags": ["swift", "import", "headers"],
         "source_url": "https://github.com/markohlebar/Import",

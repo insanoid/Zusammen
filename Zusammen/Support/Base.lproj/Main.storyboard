@@ -850,7 +850,7 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <connections>
-                                                    <action selector="openAppStoreLinkAction:" target="EgR-K0-d8n" id="Wtt-YD-X4d"/>
+                                                    <action selector="installAction:" target="EgR-K0-d8n" id="ByC-W3-GaB"/>
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ixw-Bw-HRm">
@@ -863,7 +863,7 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <connections>
-                                                    <action selector="openGithubLinkAction:" target="EgR-K0-d8n" id="XqU-Dy-nIa"/>
+                                                    <action selector="openSourceAction:" target="EgR-K0-d8n" id="Lbt-yx-ave"/>
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hCi-BX-wwd">
