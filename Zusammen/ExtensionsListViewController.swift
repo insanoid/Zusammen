@@ -11,27 +11,16 @@ import WebKit
 
 class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigationDelegate {
 
-    @IBOutlet var webView: WKWebView!
-    @IBOutlet var nameLabel: NSTextField!
-    @IBOutlet var descriptionLabel: NSTextField!
-    @IBOutlet var tagsLabel: NSTextField!
-    @IBOutlet var installButton: NSButton!
-    @IBOutlet var githubButton: NSButton!
+    @IBOutlet weak var extensionContentView: ExtensionContentView!
 
     var extensionsList: ExtensionList?
-    var currentExtension: Extension? {
+    public var currentExtension: Extension? {
         didSet { updateCurrentExtensionUI(selectedExtennsion: currentExtension) }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.uiDelegate = self
-        webView.navigationDelegate = self
         loadData()
-    }
-
-    override func viewDidAppear() {
-        super.viewDidAppear()
     }
 
     @IBAction func openExtensionsSystemPreferencePanel(_: Any) {
@@ -42,41 +31,11 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
         extensionsList = try! ExtensionListLoader.allExtensions()
         currentExtension = extensionsList?.extensions.first
     }
-}
-
-extension ExtensionsListViewController {
-
+    
     func updateCurrentExtensionUI(selectedExtennsion: Extension?) {
-        guard let currentExtension = selectedExtennsion else {
-            self.installButton.isEnabled = false
-            self.githubButton.isEnabled = false
-            // TODO: load a default page on the webview.
-            return
-        }
-       // nameLabel.stringValue = currentExtension.name
-        if let contentPath = currentExtension.readmeUrl, let contentURL = URL(string: contentPath) {
-            openContentPage(path: contentURL)
-        }
-    }
-
-    func openAppStore(identifier: String) {
-        if let url = URL(string: "macappstore://apps.apple.com/app/id" + identifier) {
-            NSWorkspace.shared.open(url)
-        }
-    }
-
-    func openContentPage(path: URL) {
-        webView.load(URLRequest(url: path))
+        self.extensionContentView.currentExtension = selectedExtennsion
     }
     
-    @IBAction func openGithubLinkAction(_: Any) {
-        let url = URL(string: self.currentExtension!.readmeUrl!)!
-        NSWorkspace.shared.open(url)
-    }
-    
-    @IBAction func openAppStoreLinkAction(_: Any) {
-        openAppStore(identifier: self.currentExtension!.downloadUrl!)
-    }
 }
 
 // MARK: - TableView Delegates and Datasource Methods.

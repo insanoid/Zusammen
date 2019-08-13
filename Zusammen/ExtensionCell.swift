@@ -14,7 +14,7 @@ import Cocoa
 class ExtensionCell: NSTableCellView {
 
     static var identifier = NSUserInterfaceItemIdentifier(rawValue: "extensionCellIdentifier")
-    static var height = 70
+    static var height = 75
 
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var taglineLabel: NSTextField!
