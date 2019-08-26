@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/insanoid/Zusammen/blob/master/Zusammen/Support/Assets.xcassets/AppIcon.appiconset/Icon_32x32%402x.png)
+![Logo](https://github.com/insanoid/Zusammen/blob/master/Zusammen/Support/Assets.xcassets/AppIcon.appiconset/Icon_32x32@2x.png?raw=true)
 ### Zusammen - All Xcode Extensions Together in One Place.
 
 - Xcode extensions are to be installed manually and Alcatraz does not work anymore.
