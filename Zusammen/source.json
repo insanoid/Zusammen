@@ -6,7 +6,8 @@
         "tags": ["text-formatting", "editing"],
         "download_type": "app_store_link",
         "readme_url": "https://github.com/cyanzhong/xTextHandler/blob/master/README.md",
-        "source_url": "https://github.com/cyanzhong/xTextHandler"
+        "source_url": "https://github.com/cyanzhong/xTextHandler",
+        "swift_version": "3.0"
     },
     {
         "name": "quickType",
@@ -15,7 +16,7 @@
         "tags": ["json", "model", "codeable", "marshalling", "swift"],
         "source_url": "https://https://github.com/quicktype/quicktype-xcode",
         "readme_url": "https://github.com/quicktype/quicktype-xcode/blob/master/README.md",
-        "download_type": "app_store_link"
+        "installation_type": "app_store_link"
     },
     {
         "name": "Import",
@@ -24,16 +25,18 @@
         "tags": ["swift", "import", "headers"],
         "source_url": "https://github.com/markohlebar/Import",
         "readme_url": "https://github.com/markohlebar/Import/blob/master/README.md",
-        "download_type": "app_store_link"
+        "installation_type": "app_store_link",
+        "swift_version": "4.0"
     },
     {
-        "name": "SwiftInitializerGenerator",
+        "name": "Swift Initializer Generator",
         "download_url": "https://github.com/Bouke/SwiftInitializerGenerator",
         "description": "Xcode Extension to generate a Swift initializer based on the lines you've selected.",
         "tags": ["swift", "initializer"],
         "source_url": "https://github.com/Bouke/SwiftInitializerGenerator",
         "readme_url": "https://github.com/Bouke/SwiftInitializerGenerator/blob/master/README.md",
-        "download_type": "github_source"
+        "installation_type": "github_source",
+        "swift_version": "5.0"
     },
     {
         "name": "XcodeWay",
@@ -42,7 +45,8 @@
         "tags": ["xcode", "shortcuts"],
         "source_url": "https://github.com/onmyway133/XcodeWay",
         "readme_url": "https://github.com/onmyway133/XcodeWay/blob/master/README.md",
-        "download_type": "github_releases"
+        "installation_type": "github_releases",
+        "swift_version": "5.0"
     },
     {
         "name": "SwiftAI",
@@ -51,7 +55,168 @@
         "tags": ["swift", "model", "json"],
         "source_url": "https://github.com/hhfa008/SwiftAI",
         "readme_url": "https://github.com/hhfa008/SwiftAI/blob/master/README.md",
-        "download_type": "github_source"
+        "installation_type": "github_source",
+        "swift_version": "5.0"
+    },
+    {
+        "name": "Jump",
+        "download_url": "https://github.com/deszip/Jump",
+        "description": "XCode source editor extension for quick moving cursor between lines.",
+        "tags": ["xcode", "interface", "lines"],
+        "source_url": "https://github.com/deszip/Jump",
+        "readme_url": "https://github.com/deszip/Jump/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "Strimmer",
+        "download_url": "https://github.com/squarefrog/strimmer",
+        "description": "Quickly strips all trailing whitespace from the current file.",
+        "tags": ["xcode", "interface", "whitespace"],
+        "source_url": "https://github.com/squarefrog/strimmer",
+        "readme_url": "https://github.com/squarefrog/strimmer/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "Xcode Color Sense 2",
+        "download_url": "https://github.com/onmyway133/XcodeColorSense2/releases",
+        "description": "Shows the color for a particular hex or rgb color in the source code.",
+        "tags": ["color"],
+        "source_url": "https://github.com/onmyway133/XcodeColorSense2",
+        "readme_url": "https://github.com/onmyway133/XcodeColorSense2/blob/master/README.md",
+        "installation_type": "github_releases",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "Xcode Equatable Generator",
+        "download_url": "https://github.com/sergdort/XcodeEquatableGenerator",
+        "description": "Shows the color for a particular hex or rgb color in the source code.",
+        "tags": ["xcode", "interface", "code generation", "equatable"],
+        "source_url": "https://github.com/sergdort/XcodeEquatableGenerator",
+        "readme_url": "https://github.com/sergdort/XcodeEquatableGenerator/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "Alignment",
+        "download_url": "1168397789",
+        "description": "Source editor extension to align your assignment statement.",
+        "tags": ["formatting"],
+        "source_url": "https://github.com/tid-kijyun/XcodeSourceEditorExtension-Alignment",
+        "readme_url": "https://github.com/tid-kijyun/XcodeSourceEditorExtension-Alignment/blob/master/README.md",
+        "installation_type": "app_store_link",
+        "swift_version": "4.2"
+    },
+    {
+        "name": "Clean Closure",
+        "download_url": "https://github.com/BalestraPatrick/CleanClosureXcode",
+        "description": "Simplify the syntax of closures in your Swift code by removing the useless ().",
+        "tags": ["formatting"],
+        "source_url": "https://github.com/BalestraPatrick/CleanClosureXcode",
+        "readme_url": "https://github.com/BalestraPatrick/CleanClosureXcode/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "SwiftLint for Xcode",
+        "download_url": "https://github.com/norio-nomura/SwiftLintForXcode",
+        "description": "SwiftLint for Xcode is a Xcode Extension that was created to run SwiftLint.",
+        "tags": ["xcode", "interface", "formatting", "lint"],
+        "source_url": "https://github.com/norio-nomura/SwiftLintForXcode",
+        "readme_url": "https://github.com/norio-nomura/SwiftLintForXcode/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "4.0"
+    },
+    {
+        "name": "Mark",
+        "download_url": "https://github.com/velyan/Mark/releases",
+        "description": "Xcode extension for automatic generation of MARK comments.",
+        "tags": ["formatting", "comment"],
+        "source_url": "https://github.com/velyan/Mark",
+        "readme_url": "https://github.com/velyan/Mark/blob/master/README.md",
+        "installation_type": "github_releases",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "XShared",
+        "download_url": "https://github.com/Otbivnoe/XShared/releases",
+        "description": "Allows you copying the code with special formatting quotes for social (Slack, Telegram).",
+        "tags": ["share", "social-media"],
+        "source_url": "https://github.com/Otbivnoe/XShared",
+        "readme_url": "https://github.com/Otbivnoe/XShared/blob/master/README.md",
+        "installation_type": "github_releases",
+        "swift_version": "4.0"
+    },
+    {
+        "name": "Quick Add",
+        "download_url": "https://github.com/funky-monkey/QuickAdd/releases",
+        "description": "Quickly add a method implementation with comment from selected text.",
+        "tags": ["code-generation"],
+        "source_url": "https://github.com/funky-monkey/QuickAdd",
+        "readme_url": "https://github.com/funky-monkey/QuickAdd/blob/master/README.md",
+        "installation_type": "github_releases",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "GenerateSwiftInit",
+        "download_url": "https://github.com/bkobilansky/GenerateSwiftInit",
+        "description": "Generates an init function based on properties of a type.",
+        "tags": ["code-generation"],
+        "source_url": "https://github.com/bkobilansky/GenerateSwiftInit",
+        "readme_url": "https://github.com/bkobilansky/GenerateSwiftInit/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "Xcode Editor Plus",
+        "download_url": "https://github.com/wangshengjia/XcodeEditorPlus",
+        "description": "Convenient editor shortcuts to Xcode using Xcode Source Editor Extension, inspired from AppCode.",
+        "tags": ["xcode", "shortcuts"],
+        "source_url": "https://github.com/wangshengjia/XcodeEditorPlus",
+        "readme_url": "https://github.com/wangshengjia/XcodeEditorPlus/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "Localizer",
+        "download_url": "https://github.com/esttorhe/Localizer",
+        "description": "Localizer is a pretty simple and naive string localizer.",
+        "tags": ["xcode", "localize"],
+        "source_url": "https://github.com/esttorhe/Localizer",
+        "readme_url": "https://github.com/esttorhe/Localizer/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "Xcode Search",
+        "download_url": "https://github.com/skyline75489/Xcode-Search",
+        "description": "Source Editor Extension that searches external source (Google, StackOverflow, etc).",
+        "tags": ["xcode", "search"],
+        "source_url": "https://github.com/skyline75489/Xcode-Search",
+        "readme_url": "https://github.com/skyline75489/Xcode-Search/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "Xcode Search",
+        "download_url": "https://github.com/skyline75489/Xcode-Search",
+        "description": "Source Editor Extension that searches external source (Google, StackOverflow, etc).",
+        "tags": ["xcode", "search"],
+        "source_url": "https://github.com/skyline75489/Xcode-Search",
+        "readme_url": "https://github.com/skyline75489/Xcode-Search/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "3.0"
+    },
+    {
+        "name": "CwlWhitespace",
+        "download_url": "https://github.com/mattgallagher/CwlWhitespace",
+        "description": "A whitespace policing source command extension for Xcode 8.",
+        "tags": ["xcode", "formatting"],
+        "source_url": "https://github.com/mattgallagher/CwlWhitespace",
+        "readme_url": "https://github.com/mattgallagher/CwlWhitespace/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "4.2"
     }
     ]
 }

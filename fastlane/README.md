@@ -30,6 +30,11 @@ Does a static analysis of the project. Configure the options in .swiftlint.yml
 fastlane format
 ```
 Run swiftformat and format all the files.
+### synx
+```
+fastlane synx
+```
+Synx to format the folder structure to be idendical between file-system and xcode project.
 ### doc
 ```
 fastlane doc

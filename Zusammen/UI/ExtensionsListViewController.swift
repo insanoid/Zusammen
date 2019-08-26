@@ -45,7 +45,9 @@ extension ExtensionsListViewController: NSTableViewDelegate, NSTableViewDataSour
     func tableView(_ tableView: NSTableView,
                    viewFor _: NSTableColumn?,
                    row: Int) -> NSView? {
-        return ExtensionCell.view(tableView: tableView, owner: self, subject: extensionsList?.extensions[row] as AnyObject?)
+        return ExtensionCell.view(tableView: tableView,
+                                  owner: self,
+                                  subject: extensionsList?.extensions[row] as AnyObject?)
     }
 
     func tableView(_: NSTableView, heightOfRow _: Int) -> CGFloat {

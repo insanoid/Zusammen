@@ -18,6 +18,10 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
     @IBOutlet var installButton: NSButton!
     @IBOutlet var githubButton: NSButton!
 
+    // This loading webview shows temporarily loading indicator while switching between two plugins.
+    // Since we are removing content using JavaScript it takes time to render.
+    var loadingWebView: WKWebView?
+
     var currentExtension: Extension? {
         didSet { updateCurrentExtensionUI(selectedExtennsion: currentExtension) }
     }
@@ -48,7 +52,8 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
         githubButton.isEnabled = false
         titleLabel.stringValue = ""
         taglineLabel.stringValue = ""
-        loadDefaultWebpage()
+        loadDefaultWebpage(currentWebView: webView)
+        hideLoadingWebView()
     }
 
     func updateCurrentExtensionUI(selectedExtennsion: Extension?) {
@@ -56,6 +61,8 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
             resetView()
             return
         }
+        hideLoadingWebView()
+        // Reseting view is always better than showing old content while new content loads.
         titleLabel.stringValue = currentExtension.name
         taglineLabel.stringValue = currentExtension.descriptionValue
         if let tags = currentExtension.tags {
@@ -75,6 +82,7 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
         guard let url = webView.url, url.host == "github.com" else {
             return
         }
+        // This script removes the header from github and just keeps the readme for the user to read.
         let script = """
         function removeItems() {
             var header = document.getElementsByClassName('position-relative js-header-wrapper')[0];
@@ -96,6 +104,9 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
         removeItems();
         """
         webView.evaluateJavaScript(script)
+        if webView == self.webView {
+            hideLoadingWebView()
+        }
     }
 
     func openAppStore(identifier: String) {
@@ -104,16 +115,35 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
         }
     }
 
+    func showLoadingWebView() {
+        loadingWebView = WKWebView(frame: webView.frame)
+        loadingWebView?.uiDelegate = self
+        loadingWebView?.navigationDelegate = self
+
+        loadingWebView!.heightAnchor.constraint(equalTo: webView.heightAnchor, multiplier: 1.0)
+        loadingWebView!.topAnchor.constraint(equalTo: webView.topAnchor)
+        addSubview(loadingWebView!)
+    }
+
+    func hideLoadingWebView() {
+        if loadingWebView != nil {
+            loadingWebView?.removeFromSuperview()
+            loadingWebView = nil
+        }
+    }
+
     func openContentPage(path: URL) {
+        showLoadingWebView()
+        loadDefaultWebpage(currentWebView: loadingWebView!)
         webView.load(URLRequest(url: path))
     }
 
     /// Load the default webpage in the webview.
-    func loadDefaultWebpage() {
+    func loadDefaultWebpage(currentWebView: WKWebView) {
         let url = Bundle.main.url(forResource: "placeholder", withExtension: "html")!
-        webView.loadFileURL(url, allowingReadAccessTo: url)
+        currentWebView.loadFileURL(url, allowingReadAccessTo: url)
         let request = URLRequest(url: url)
-        webView.load(request)
+        currentWebView.load(request)
     }
 
     // Install the currently selected addon on to your machine.

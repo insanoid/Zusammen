@@ -37,16 +37,78 @@
                 padding-top: 0px;
                 color: darkgray;
             }
+        
+            .lds-ellipsis {
+                display: inline-block;
+                position: relative;
+                width: 64px;
+                height: 64px;
+            }
+            .lds-ellipsis div {
+                position: absolute;
+                top: 27px;
+                width: 11px;
+                height: 11px;
+                border-radius: 50%;
+                background: #ccc;
+                animation-timing-function: cubic-bezier(0, 1, 1, 0);
+            }
+            .lds-ellipsis div:nth-child(1) {
+                left: 6px;
+                animation: lds-ellipsis1 0.6s infinite;
+            }
+            .lds-ellipsis div:nth-child(2) {
+                left: 6px;
+                animation: lds-ellipsis2 0.6s infinite;
+            }
+            .lds-ellipsis div:nth-child(3) {
+                left: 26px;
+                animation: lds-ellipsis2 0.6s infinite;
+            }
+            .lds-ellipsis div:nth-child(4) {
+                left: 45px;
+                animation: lds-ellipsis3 0.6s infinite;
+            }
+            @keyframes lds-ellipsis1 {
+                0% {
+                    transform: scale(0);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+            @keyframes lds-ellipsis3 {
+                0% {
+                    transform: scale(1);
+                }
+                100% {
+                    transform: scale(0);
+                }
+            }
+            @keyframes lds-ellipsis2 {
+                0% {
+                    transform: translate(0, 0);
+                }
+                100% {
+                    transform: translate(19px, 0);
+                }
+            }
+
+
+        
         </style>
     </head>
 
     <body>
         <div class="center-item">
             <div>
-                <img src="https://github.com/insanoid/Zusammen/raw/master/Graphics/IconZusammen.png" class="imagebox" width="200">
-                    <h1 class="title">Zusammen</h1>
-                    <label class="secondary-title">Together as one</label>
-                    </div>
+                <img src="https://github.com/insanoid/Zusammen/raw/master/Graphics/IconZusammen.png" class="imagebox" width="150">
+                <h1 class="title">Zusammen</h1>
+                <label class="secondary-title">Together as one.</label><br/>
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div>
+            
+            
         </div>
     </body>
 

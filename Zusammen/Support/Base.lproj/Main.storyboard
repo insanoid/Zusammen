@@ -704,21 +704,21 @@
             <objects>
                 <viewController title="Zusammen" id="XfG-lQ-9wD" customClass="ExtensionsListViewController" customModule="Zusammen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="841" height="541"/>
+                        <rect key="frame" x="0.0" y="0.0" width="841" height="547"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wY-VD-YfI">
-                                <rect key="frame" x="0.0" y="0.0" width="841" height="541"/>
+                                <rect key="frame" x="0.0" y="0.0" width="841" height="547"/>
                                 <subviews>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="77" horizontalPageScroll="10" verticalLineScroll="77" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="TQF-WW-zoc">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="541"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="547"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <clipView key="contentView" drawsBackground="NO" id="Fm1-Xa-d6A">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="541"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="547"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="75" rowSizeStyle="automatic" viewBased="YES" id="Y76-QC-bpa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="541"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="547"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -742,7 +742,7 @@
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hok-fl-w6x">
-                                                                            <rect key="frame" x="6" y="47" width="304" height="20"/>
+                                                                            <rect key="frame" x="6" y="47" width="268" height="20"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="20" id="E1S-mA-kKr"/>
                                                                             </constraints>
@@ -766,6 +766,18 @@
                                                                         <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="1ca-uJ-fNJ">
                                                                             <rect key="frame" x="8" y="-2" width="309" height="5"/>
                                                                         </box>
+                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u0F-2m-qcd">
+                                                                            <rect key="frame" x="276" y="52" width="34" height="15"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="30" id="5qW-e7-dEb"/>
+                                                                                <constraint firstAttribute="height" constant="15" id="8xh-Gg-OUi"/>
+                                                                            </constraints>
+                                                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="3.0" id="TdQ-tT-Qbs">
+                                                                                <font key="font" size="11" name="Verdana-Bold"/>
+                                                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                                                            </textFieldCell>
+                                                                        </textField>
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="trailing" secondItem="1ca-uJ-fNJ" secondAttribute="trailing" id="4FH-za-lAj"/>
@@ -773,13 +785,16 @@
                                                                         <constraint firstItem="1ca-uJ-fNJ" firstAttribute="leading" secondItem="o2a-k3-TH2" secondAttribute="leading" id="I2Q-w1-tfb"/>
                                                                         <constraint firstItem="o2a-k3-TH2" firstAttribute="leading" secondItem="ife-7S-hV0" secondAttribute="leading" constant="8" id="Lng-uS-BOg"/>
                                                                         <constraint firstAttribute="trailing" secondItem="o2a-k3-TH2" secondAttribute="trailing" constant="9" id="Ocx-7y-XFv"/>
+                                                                        <constraint firstItem="u0F-2m-qcd" firstAttribute="top" secondItem="ife-7S-hV0" secondAttribute="top" constant="8" id="VTe-B0-vqi"/>
                                                                         <constraint firstItem="hok-fl-w6x" firstAttribute="top" secondItem="ife-7S-hV0" secondAttribute="top" constant="8" id="hnl-0V-djx"/>
                                                                         <constraint firstItem="1ca-uJ-fNJ" firstAttribute="bottom" secondItem="o2a-k3-TH2" secondAttribute="bottom" constant="4" id="jYb-1d-pZQ"/>
                                                                         <constraint firstItem="o2a-k3-TH2" firstAttribute="top" secondItem="hok-fl-w6x" secondAttribute="bottom" constant="3" id="lHu-I7-m0Q"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="hok-fl-w6x" secondAttribute="trailing" constant="9" id="oas-B2-Lnu"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="u0F-2m-qcd" secondAttribute="trailing" constant="9" id="nzG-Ym-rtb"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="hok-fl-w6x" secondAttribute="trailing" constant="45" id="oas-B2-Lnu"/>
                                                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="o2a-k3-TH2" secondAttribute="bottom" constant="2" id="tjA-gJ-B6u"/>
                                                                     </constraints>
                                                                     <connections>
+                                                                        <outlet property="badgeLabel" destination="u0F-2m-qcd" id="fHG-vb-3yF"/>
                                                                         <outlet property="taglineLabel" destination="o2a-k3-TH2" id="Fnj-KF-mxM"/>
                                                                         <outlet property="titleLabel" destination="hok-fl-w6x" id="YSq-7D-cbL"/>
                                                                     </connections>
@@ -808,11 +823,11 @@
                                         </scroller>
                                     </scrollView>
                                     <customView id="EgR-K0-d8n" customClass="ExtensionContentView" customModule="Zusammen" customModuleProvider="target">
-                                        <rect key="frame" x="330" y="0.0" width="511" height="541"/>
+                                        <rect key="frame" x="330" y="0.0" width="511" height="547"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wKk-94-zHu">
-                                                <rect key="frame" x="14" y="485" width="483" height="40"/>
+                                                <rect key="frame" x="14" y="491" width="483" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="gTn-cg-vZu"/>
                                                 </constraints>
@@ -823,7 +838,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-gZ-UYZ">
-                                                <rect key="frame" x="14" y="439" width="483" height="20"/>
+                                                <rect key="frame" x="14" y="445" width="483" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="MVE-DB-xBj"/>
                                                 </constraints>
@@ -834,7 +849,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSR-Fd-fyO">
-                                                <rect key="frame" x="16" y="44" width="479" height="387"/>
+                                                <rect key="frame" x="16" y="44" width="479" height="393"/>
                                                 <wkWebViewConfiguration key="configuration">
                                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                     <wkPreferences key="preferences"/>
@@ -880,10 +895,10 @@
                                                 </connections>
                                             </button>
                                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ob3-n2-O4c">
-                                                <rect key="frame" x="16" y="465" width="479" height="5"/>
+                                                <rect key="frame" x="16" y="471" width="479" height="5"/>
                                             </box>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ob2-4A-hbd">
-                                                <rect key="frame" x="14" y="473" width="483" height="15"/>
+                                                <rect key="frame" x="14" y="479" width="483" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="18" id="FUD-Ce-tpL"/>
                                                 </constraints>

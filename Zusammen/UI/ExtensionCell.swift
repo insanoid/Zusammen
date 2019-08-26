@@ -15,6 +15,7 @@ class ExtensionCell: NSTableCellView {
     static var height = 75
     @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var taglineLabel: NSTextField!
+    @IBOutlet var badgeLabel: NSTextField!
     @IBOutlet var thumbnailImageView: NSImageView!
     private var currentExtension: Extension?
 
@@ -37,8 +38,8 @@ class ExtensionCell: NSTableCellView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        taglineLabel.textColor = NSColor.gray
-        titleLabel.textColor = NSColor.black
+        taglineLabel.textColor = .gray
+        titleLabel.textColor = .black
     }
 
     func updateUI() {
@@ -47,8 +48,19 @@ class ExtensionCell: NSTableCellView {
         }
         titleLabel.textColor = .textColor
         taglineLabel.textColor = .textColor
+
+        badgeLabel.textColor = .orange
+        badgeLabel.layer?.cornerRadius = 15
+
         taglineLabel.alphaValue = 0.7
         titleLabel.stringValue = extensionValue.name
         taglineLabel.stringValue = extensionValue.descriptionValue
+
+        if let version = extensionValue.swiftVersion {
+            badgeLabel.stringValue = version
+            badgeLabel.alphaValue = 1.0
+        } else {
+            badgeLabel.alphaValue = 0.0
+        }
     }
 }
