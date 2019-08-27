@@ -9,6 +9,7 @@
 import Cocoa
 import Foundation
 
+/// NSTextField which creates a badge with rounded corners and orange background.
 class BadgeLabel: NSTextField {
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -30,12 +31,13 @@ class BadgeLabel: NSTextField {
         backgroundColor = .orange
     }
 
+    /// Update the value of the label if the value is nil then hide the label.
     func updateValue(string: String?) {
         if let value = string {
             stringValue = value
-            alphaValue = 0.7
+            isHidden = false
         } else {
-            alphaValue = 0.0
+            isHidden = true
         }
     }
 }

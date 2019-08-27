@@ -10,7 +10,7 @@ import Cocoa
 import Foundation
 import WebKit
 
-class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
+class ExtensionContentView: NSView {
     @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var taglineLabel: NSTextField!
     @IBOutlet var tagsLabel: NSTextField!
@@ -68,6 +68,13 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
         titleLabel.stringValue = currentExtension.name
         taglineLabel.stringValue = currentExtension.descriptionValue
         swiftVersionLabel.updateValue(string: currentExtension.swiftVersion)
+        
+        if currentExtension.installationType == .appleStore {
+           installButton.title = "Install (Store)"
+        } else {
+            installButton.title = "Install"
+        }
+        
         if let tags = currentExtension.tags {
             tagsLabel.stringValue = tags.map { (value) -> String in
                 value.uppercased()
@@ -78,43 +85,6 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
 
         if let contentPath = currentExtension.readmeUrl, let contentURL = URL(string: contentPath) {
             openContentPage(path: contentURL)
-        }
-    }
-
-    func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
-        guard let url = webView.url, url.host == "github.com" else {
-            return
-        }
-        // This script removes the header from github and just keeps the readme for the user to read.
-        let script = """
-        function removeItems() {
-            var header = document.getElementsByClassName('position-relative js-header-wrapper')[0];
-            var pageHead = document.getElementsByClassName('pagehead')[0];
-            var signupPrompt = document.getElementsByClassName('signup-prompt-bg rounded-1')[0];
-            var fileHeader = document.getElementsByClassName('d-flex flex-items-start flex-shrink-0 pb-3 flex-column flex-md-row')[0];
-            var boxHeader1 = document.getElementsByClassName('Box Box--condensed d-flex flex-column flex-shrink-0')[0];
-            var footer = document.getElementsByClassName('footer')[0];
-            var boxHeader2 = document.getElementsByClassName('Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center')[0];
-
-            header.parentNode.removeChild(header);
-            pageHead.parentNode.removeChild(pageHead);
-            signupPrompt.parentNode.removeChild(signupPrompt);
-            fileHeader.parentNode.removeChild(fileHeader);
-            boxHeader1.parentNode.removeChild(boxHeader1);
-            footer.parentNode.removeChild(footer);
-            boxHeader2.parentNode.removeChild(boxHeader2);
-        }
-        removeItems();
-        """
-        webView.evaluateJavaScript(script)
-        if webView == self.webView {
-            hideLoadingWebView()
-        }
-    }
-
-    func openAppStore(identifier: String) {
-        if let url = URL(string: "macappstore://apps.apple.com/app/id" + identifier) {
-            NSWorkspace.shared.open(url)
         }
     }
 
@@ -153,7 +123,10 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
     ///
     /// - Parameter _: Button
     @IBAction func installAction(_: Any) {
-        openAppStore(identifier: currentExtension!.downloadUrl!)
+        if currentExtension?.installationType == .appleStore {
+            let url = URL(string: currentExtension!.downloadUrl!)!
+            NSWorkspace.shared.open(url)
+        }
     }
 
     /// Open source file for the project (A URL on the source control repo).
@@ -169,5 +142,49 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
     /// - Parameter _: Button.
     @IBAction func openExtensionsSystemPreferencePanel(_: Any) {
         NSWorkspace.shared.open(URL(fileURLWithPath: "/System/Library/PreferencePanes/Extensions.prefPane"))
+    }
+}
+
+extension ExtensionContentView: WKUIDelegate, WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
+        guard let url = webView.url, url.host == "github.com" else {
+            return
+        }
+        // This script removes the header from github and just keeps the readme for the user to read.
+        let script = """
+        function removeItems() {
+            var header = document.getElementsByClassName('position-relative js-header-wrapper')[0];
+            var pageHead = document.getElementsByClassName('pagehead')[0];
+            var signupPrompt = document.getElementsByClassName('signup-prompt-bg rounded-1')[0];
+            var fileHeader = document.getElementsByClassName('d-flex flex-items-start flex-shrink-0 pb-3 flex-column flex-md-row')[0];
+            var boxHeader1 = document.getElementsByClassName('Box Box--condensed d-flex flex-column flex-shrink-0')[0];
+            var footer = document.getElementsByClassName('footer')[0];
+            var boxHeader2 = document.getElementsByClassName('Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center')[0];
+
+            header.parentNode.removeChild(header);
+            pageHead.parentNode.removeChild(pageHead);
+            signupPrompt.parentNode.removeChild(signupPrompt);
+            fileHeader.parentNode.removeChild(fileHeader);
+            boxHeader1.parentNode.removeChild(boxHeader1);
+            footer.parentNode.removeChild(footer);
+            boxHeader2.parentNode.removeChild(boxHeader2);
+        }
+        removeItems();
+        """
+        webView.evaluateJavaScript(script)
+        if webView == self.webView {
+            hideLoadingWebView()
+        }
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
+        guard navigationAction.navigationType == .other || navigationAction.navigationType == .reload  else {
+            decisionHandler(.cancel)
+            let url = URL(string: navigationAction.request.url!.absoluteString)!
+            NSWorkspace.shared.open(url)
+            return
+        }
+        decisionHandler(.allow)
     }
 }

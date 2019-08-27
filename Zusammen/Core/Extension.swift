@@ -7,10 +7,18 @@
 
 import Foundation
 
+/// Installation type for the extensions.
+enum InstallationType: String, Codable {
+    case appleStore = "app_store_link"
+    case githubSource = "github_source"
+    case githubRelease = "github_release"
+    case unknown
+}
+
 struct Extension: Codable {
     enum CodingKeys: String, CodingKey {
         case name
-        case downloadType = "download_type"
+        case installationType = "installation_type"
         case descriptionValue = "description"
         case readmeUrl = "readme_url"
         case downloadUrl = "download_url"
@@ -19,16 +27,8 @@ struct Extension: Codable {
         case tags
     }
 
-    /// Installation type for the extensions.
-    enum InstallationType: String, Codable {
-        case appleStore = "app_store"
-        case githubSource = "github_source"
-        case githubRelease = "github_release"
-        case unknown
-    }
-
     var name: String
-    var downloadType: InstallationType
+    var installationType: InstallationType
     var descriptionValue: String
     var screenshot: String?
     var sourceUrl: String?
@@ -41,9 +41,9 @@ struct Extension: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
         do {
-            downloadType = try container.decode(InstallationType.self, forKey: .downloadType)
+            installationType = try container.decode(InstallationType.self, forKey: .installationType)
         } catch {
-            downloadType = .unknown
+            installationType = .unknown
         }
         descriptionValue = try container.decode(String.self, forKey: .descriptionValue)
         sourceUrl = try container.decodeIfPresent(String.self, forKey: .sourceUrl)

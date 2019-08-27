@@ -1,26 +1,26 @@
 {
     "extensions": [{
         "name": "xTextHandler",
-        "download_url": "1163761963",
+        "download_url": "https://itunes.apple.com/app/id1163761963",
         "description": "Xcode Source Editor Extension based tools to improve the text editing experience of Xcode 8 and provide extensions with simple code.",
         "tags": ["text-formatting", "editing"],
-        "download_type": "app_store_link",
+        "installation_type": "app_store_link",
         "readme_url": "https://github.com/cyanzhong/xTextHandler/blob/master/README.md",
         "source_url": "https://github.com/cyanzhong/xTextHandler",
         "swift_version": "Swift 3"
     },
     {
         "name": "quickType",
-        "download_url": "1330801220",
+        "download_url": "https://itunes.apple.com/us/app/paste-json-as-code-quicktype/id1330801220?mt=12",
         "description": "quicktype infers types from sample JSON data, then outputs strongly typed models and serializers for working with that data in Swift, Objective-C, C++, Java and more. This extension adds native quicktype support to Xcode 9.",
         "tags": ["json", "model", "codeable", "marshalling", "swift"],
-        "source_url": "https://https://github.com/quicktype/quicktype-xcode",
+        "source_url": "https://github.com/quicktype/quicktype-xcode",
         "readme_url": "https://github.com/quicktype/quicktype-xcode/blob/master/README.md",
         "installation_type": "app_store_link"
     },
     {
         "name": "Import",
-        "download_url": "1167060791",
+        "download_url": "https://itunes.apple.com/ie/app/import/id1167060791?mt=12",
         "description": "Xcode extension for adding imports from anywhere in the code.",
         "tags": ["swift", "import", "headers"],
         "source_url": "https://github.com/markohlebar/Import",
@@ -100,7 +100,7 @@
     },
     {
         "name": "Alignment",
-        "download_url": "1168397789",
+        "download_url": "https://itunes.apple.com/us/app/alignment-for-xcode/id1168397789?ls=1&mt=12",
         "description": "Source editor extension to align your assignment statement.",
         "tags": ["formatting"],
         "source_url": "https://github.com/tid-kijyun/XcodeSourceEditorExtension-Alignment",
