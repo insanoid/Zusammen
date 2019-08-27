@@ -8,6 +8,7 @@
 
 import Cocoa
 import Foundation
+import QuartzCore
 
 /// Tableview cell to show information about the sensor.
 class ExtensionCell: NSTableCellView {
@@ -15,7 +16,7 @@ class ExtensionCell: NSTableCellView {
     static var height = 75
     @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var taglineLabel: NSTextField!
-    @IBOutlet var badgeLabel: NSTextField!
+    @IBOutlet var badgeLabel: BadgeLabel!
     @IBOutlet var thumbnailImageView: NSImageView!
     private var currentExtension: Extension?
 
@@ -49,18 +50,9 @@ class ExtensionCell: NSTableCellView {
         titleLabel.textColor = .textColor
         taglineLabel.textColor = .textColor
 
-        badgeLabel.textColor = .orange
-        badgeLabel.layer?.cornerRadius = 15
-
         taglineLabel.alphaValue = 0.7
         titleLabel.stringValue = extensionValue.name
         taglineLabel.stringValue = extensionValue.descriptionValue
-
-        if let version = extensionValue.swiftVersion {
-            badgeLabel.stringValue = version
-            badgeLabel.alphaValue = 1.0
-        } else {
-            badgeLabel.alphaValue = 0.0
-        }
+        badgeLabel.updateValue(string: extensionValue.swiftVersion)
     }
 }

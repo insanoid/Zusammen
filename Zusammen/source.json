@@ -7,7 +7,7 @@
         "download_type": "app_store_link",
         "readme_url": "https://github.com/cyanzhong/xTextHandler/blob/master/README.md",
         "source_url": "https://github.com/cyanzhong/xTextHandler",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "quickType",
@@ -26,7 +26,7 @@
         "source_url": "https://github.com/markohlebar/Import",
         "readme_url": "https://github.com/markohlebar/Import/blob/master/README.md",
         "installation_type": "app_store_link",
-        "swift_version": "4.0"
+        "swift_version": "Swift 4"
     },
     {
         "name": "Swift Initializer Generator",
@@ -36,7 +36,7 @@
         "source_url": "https://github.com/Bouke/SwiftInitializerGenerator",
         "readme_url": "https://github.com/Bouke/SwiftInitializerGenerator/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "5.0"
+        "swift_version": "Swift 5"
     },
     {
         "name": "XcodeWay",
@@ -46,7 +46,7 @@
         "source_url": "https://github.com/onmyway133/XcodeWay",
         "readme_url": "https://github.com/onmyway133/XcodeWay/blob/master/README.md",
         "installation_type": "github_releases",
-        "swift_version": "5.0"
+        "swift_version": "Swift 5"
     },
     {
         "name": "SwiftAI",
@@ -56,7 +56,7 @@
         "source_url": "https://github.com/hhfa008/SwiftAI",
         "readme_url": "https://github.com/hhfa008/SwiftAI/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "5.0"
+        "swift_version": "Swift 5"
     },
     {
         "name": "Jump",
@@ -66,7 +66,7 @@
         "source_url": "https://github.com/deszip/Jump",
         "readme_url": "https://github.com/deszip/Jump/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "Strimmer",
@@ -76,7 +76,7 @@
         "source_url": "https://github.com/squarefrog/strimmer",
         "readme_url": "https://github.com/squarefrog/strimmer/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "Xcode Color Sense 2",
@@ -86,7 +86,7 @@
         "source_url": "https://github.com/onmyway133/XcodeColorSense2",
         "readme_url": "https://github.com/onmyway133/XcodeColorSense2/blob/master/README.md",
         "installation_type": "github_releases",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "Xcode Equatable Generator",
@@ -96,7 +96,7 @@
         "source_url": "https://github.com/sergdort/XcodeEquatableGenerator",
         "readme_url": "https://github.com/sergdort/XcodeEquatableGenerator/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "Alignment",
@@ -106,7 +106,7 @@
         "source_url": "https://github.com/tid-kijyun/XcodeSourceEditorExtension-Alignment",
         "readme_url": "https://github.com/tid-kijyun/XcodeSourceEditorExtension-Alignment/blob/master/README.md",
         "installation_type": "app_store_link",
-        "swift_version": "4.2"
+        "swift_version": "Swift 4.2"
     },
     {
         "name": "Clean Closure",
@@ -116,7 +116,7 @@
         "source_url": "https://github.com/BalestraPatrick/CleanClosureXcode",
         "readme_url": "https://github.com/BalestraPatrick/CleanClosureXcode/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "SwiftLint for Xcode",
@@ -126,7 +126,7 @@
         "source_url": "https://github.com/norio-nomura/SwiftLintForXcode",
         "readme_url": "https://github.com/norio-nomura/SwiftLintForXcode/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "4.0"
+        "swift_version": "Swift 4"
     },
     {
         "name": "Mark",
@@ -136,7 +136,7 @@
         "source_url": "https://github.com/velyan/Mark",
         "readme_url": "https://github.com/velyan/Mark/blob/master/README.md",
         "installation_type": "github_releases",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "XShared",
@@ -146,7 +146,7 @@
         "source_url": "https://github.com/Otbivnoe/XShared",
         "readme_url": "https://github.com/Otbivnoe/XShared/blob/master/README.md",
         "installation_type": "github_releases",
-        "swift_version": "4.0"
+        "swift_version": "Swift 4"
     },
     {
         "name": "Quick Add",
@@ -156,7 +156,7 @@
         "source_url": "https://github.com/funky-monkey/QuickAdd",
         "readme_url": "https://github.com/funky-monkey/QuickAdd/blob/master/README.md",
         "installation_type": "github_releases",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "GenerateSwiftInit",
@@ -166,7 +166,7 @@
         "source_url": "https://github.com/bkobilansky/GenerateSwiftInit",
         "readme_url": "https://github.com/bkobilansky/GenerateSwiftInit/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "Xcode Editor Plus",
@@ -176,7 +176,7 @@
         "source_url": "https://github.com/wangshengjia/XcodeEditorPlus",
         "readme_url": "https://github.com/wangshengjia/XcodeEditorPlus/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "Localizer",
@@ -186,7 +186,7 @@
         "source_url": "https://github.com/esttorhe/Localizer",
         "readme_url": "https://github.com/esttorhe/Localizer/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "Xcode Search",
@@ -196,7 +196,7 @@
         "source_url": "https://github.com/skyline75489/Xcode-Search",
         "readme_url": "https://github.com/skyline75489/Xcode-Search/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "Xcode Search",
@@ -206,7 +206,7 @@
         "source_url": "https://github.com/skyline75489/Xcode-Search",
         "readme_url": "https://github.com/skyline75489/Xcode-Search/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "3.0"
+        "swift_version": "Swift 3"
     },
     {
         "name": "CwlWhitespace",
@@ -216,7 +216,7 @@
         "source_url": "https://github.com/mattgallagher/CwlWhitespace",
         "readme_url": "https://github.com/mattgallagher/CwlWhitespace/blob/master/README.md",
         "installation_type": "github_source",
-        "swift_version": "4.2"
+        "swift_version": "Swift 4.2"
     }
     ]
 }

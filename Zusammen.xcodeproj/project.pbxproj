@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932F16DF231530DA000C3B28 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F16DE231530DA000C3B28 /* BadgeLabel.swift */; };
 		9348E6BD22FDD8ED0090F0DE /* ExtensionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */; };
 		934F65D82302FB04006EA517 /* placeholder.html in Resources */ = {isa = PBXBuildFile; fileRef = 934F65D72302FB04006EA517 /* placeholder.html */; };
 		934F65D92302FB04006EA517 /* placeholder.html in Resources */ = {isa = PBXBuildFile; fileRef = 934F65D72302FB04006EA517 /* placeholder.html */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		29581008347966C9FC10BB74 /* Pods-Zusammen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zusammen.release.xcconfig"; path = "Target Support Files/Pods-Zusammen/Pods-Zusammen.release.xcconfig"; sourceTree = "<group>"; };
+		932F16DE231530DA000C3B28 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 		9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCell.swift; sourceTree = "<group>"; };
 		934F65D72302FB04006EA517 /* placeholder.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = placeholder.html; sourceTree = "<group>"; };
 		9381365022FC2AB300BC6C0F /* Zusammen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zusammen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 				9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */,
 				93BF48B623022E25008BF88C /* ExtensionContentView.swift */,
 				9381365522FC2AB300BC6C0F /* ExtensionsListViewController.swift */,
+				932F16DE231530DA000C3B28 /* BadgeLabel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				9381367A22FC735D00BC6C0F /* ExtensionListLoader.swift in Sources */,
 				9381367622FC4EBA00BC6C0F /* ExtensionList.swift in Sources */,
 				9381365422FC2AB300BC6C0F /* AppDelegate.swift in Sources */,
+				932F16DF231530DA000C3B28 /* BadgeLabel.swift in Sources */,
 				9381367722FC4EBA00BC6C0F /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

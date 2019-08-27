@@ -17,6 +17,7 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
     @IBOutlet var webView: WKWebView!
     @IBOutlet var installButton: NSButton!
     @IBOutlet var githubButton: NSButton!
+    @IBOutlet var swiftVersionLabel: BadgeLabel!
 
     // This loading webview shows temporarily loading indicator while switching between two plugins.
     // Since we are removing content using JavaScript it takes time to render.
@@ -54,6 +55,7 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
         taglineLabel.stringValue = ""
         loadDefaultWebpage(currentWebView: webView)
         hideLoadingWebView()
+        swiftVersionLabel.updateValue(string: nil)
     }
 
     func updateCurrentExtensionUI(selectedExtennsion: Extension?) {
@@ -65,6 +67,7 @@ class ExtensionContentView: NSView, WKUIDelegate, WKNavigationDelegate {
         // Reseting view is always better than showing old content while new content loads.
         titleLabel.stringValue = currentExtension.name
         taglineLabel.stringValue = currentExtension.descriptionValue
+        swiftVersionLabel.updateValue(string: currentExtension.swiftVersion)
         if let tags = currentExtension.tags {
             tagsLabel.stringValue = tags.map { (value) -> String in
                 value.uppercased()
