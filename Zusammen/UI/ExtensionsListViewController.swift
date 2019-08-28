@@ -11,6 +11,7 @@ import WebKit
 
 class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigationDelegate {
     @IBOutlet var extensionContentView: ExtensionContentView!
+    @IBOutlet var extensionListTableView: NSTableView!
 
     var extensionsList: ExtensionList?
     public var currentExtension: Extension? {

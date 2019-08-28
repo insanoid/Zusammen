@@ -10,7 +10,7 @@ import Cocoa
 import Foundation
 import QuartzCore
 
-/// Tableview cell to show information about the sensor.
+/// NSTableCellView to show information about the sensor.
 class ExtensionCell: NSTableCellView {
     static var identifier = NSUserInterfaceItemIdentifier(rawValue: "extensionCellIdentifier")
     static var height = 75

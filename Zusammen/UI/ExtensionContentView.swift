@@ -9,6 +9,7 @@
 import Cocoa
 import Foundation
 import WebKit
+import Alamofire
 
 class ExtensionContentView: NSView {
     @IBOutlet var titleLabel: NSTextField!
@@ -71,6 +72,10 @@ class ExtensionContentView: NSView {
         
         if currentExtension.installationType == .appleStore {
            installButton.title = "Install (Store)"
+        } else if currentExtension.installationType == .githubSource {
+            installButton.title = "Install (Xcode Project)"
+        }else if currentExtension.installationType == .githubRelease {
+            installButton.title = "Install (Download Ext.)"
         } else {
             installButton.title = "Install"
         }
@@ -123,12 +128,75 @@ class ExtensionContentView: NSView {
     ///
     /// - Parameter _: Button
     @IBAction func installAction(_: Any) {
-        if currentExtension?.installationType == .appleStore {
-            let url = URL(string: currentExtension!.downloadUrl!)!
-            NSWorkspace.shared.open(url)
+        
+        // If there is no download URL then we cannot do much about it.
+        guard let downloadPath = currentExtension?.downloadUrl,
+              let downloadURL = URL(string: downloadPath) else {
+            return
         }
-    }
+        
+        // Disable button to stop multiple download actions to be triggered at once.
+        self.installButton.isEnabled = false
+        
+        // We need a name and path for the temp folder for the extenstion.
+        let folderName = currentExtension!.name.replacingOccurrences(of: " ", with: "")
+        let tempFolderPath = "\(Constants.tempFolderPath)\(folderName)"
+        
+        // Clear if this folder already exists so that we do not have duplicate item problem.
+        FileHelper.clearFolder(folderPath: tempFolderPath)
+        
+        if currentExtension?.installationType == .appleStore {
+            // Open the app store page on the browser, since apps might not be in the country of the user.
+            // We do not have a sure shot way to show it in the app store app.
+            NSWorkspace.shared.open(downloadURL)
+            self.installButton.isEnabled = true
 
+        } else  if currentExtension?.installationType == .githubSource {
+            // Currently we are just cloning the github repo and opening the folder in finder for the user.
+            // Installation directly is tricky as we will need to know and have the build system
+            let input = "git clone \(downloadPath) '\(tempFolderPath)'"
+            let _ = input.runAsCommand()
+            NSWorkspace.shared.openFile(tempFolderPath)
+            self.installButton.isEnabled = true
+
+        } else if currentExtension?.installationType == .githubRelease {
+
+            let fileName = downloadURL.lastPathComponent
+            FileHelper.downloadFile(fileURL: downloadURL, destination: tempFolderPath, fileName: fileName) { (successful, errorMessage) in
+                if successful {
+                    let input = "unzip -o '\(tempFolderPath)/\(fileName)' -d ~/Applications/"
+                    let output = input.runAsCommand()
+                    print(output)
+                    let appName = fileName.components(separatedBy: ".").first!
+                    NSWorkspace.shared.launchApplication(appName)
+                    NSWorkspace.shared.openFile("~/Applications/")
+                    DispatchQueue.main.async {
+                        let alert: NSAlert = NSAlert()
+                        alert.messageText = "The application has been installed, enable the extensions in the system preference."
+                        alert.alertStyle = .informational
+                        alert.addButton(withTitle: "Close")
+                        alert.addButton(withTitle: "Extensions Preferences")
+                        let alertResult = alert.runModal()
+                        if alertResult == .alertSecondButtonReturn {
+                            NSWorkspace.shared.open(URL(fileURLWithPath: "/System/Library/PreferencePanes/Extensions.prefPane"))
+                        }
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                    let alert: NSAlert = NSAlert()
+                    alert.messageText = errorMessage ?? "The installation was not successful. Please open the source code webpage and install manually."
+                    alert.alertStyle = .warning
+                    let _ = alert.runModal()
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.installButton.isEnabled = true
+                }
+            }
+        }
+       
+        
+    }
     /// Open source file for the project (A URL on the source control repo).
     ///
     /// - Parameter _: Button
@@ -145,6 +213,7 @@ class ExtensionContentView: NSView {
     }
 }
 
+// Webview related functions grouped together in a single extension.
 extension ExtensionContentView: WKUIDelegate, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {

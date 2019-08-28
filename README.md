@@ -15,6 +15,7 @@
 - [ ] Provide a way to filter the extensions either by search or by Swift version number.
 - [ ] Handle links from the web-view to open in a browser.
 - [ ] CI integration and release 1.0.0.
+- [ ] Try to install only if Xcode/Swift version matches the code version.
 
 ### Contributions and Requests
 
