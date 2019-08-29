@@ -25,6 +25,7 @@
 		938315172315C576001A1533 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938315162315C576001A1533 /* StringExtensions.swift */; };
 		938315192315CBFA001A1533 /* InstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938315182315CBFA001A1533 /* InstallerViewController.swift */; };
 		93BF48B723022E25008BF88C /* ExtensionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF48B623022E25008BF88C /* ExtensionContentView.swift */; };
+		93D6F6092317EAA8002C2D4A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D6F6082317EAA8002C2D4A /* SearchViewController.swift */; };
 		F6400DB7E47D8E909C1BBDCF /* Pods_Zusammen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF2EF2BC0E69499AC965732 /* Pods_Zusammen.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		938315162315C576001A1533 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		938315182315CBFA001A1533 /* InstallerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallerViewController.swift; sourceTree = "<group>"; };
 		93BF48B623022E25008BF88C /* ExtensionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionContentView.swift; sourceTree = "<group>"; };
+		93D6F6082317EAA8002C2D4A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9EF2EF2BC0E69499AC965732 /* Pods_Zusammen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zusammen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6CE620CC31215EDBDB30DF9 /* Pods-Zusammen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zusammen.debug.xcconfig"; path = "Target Support Files/Pods-Zusammen/Pods-Zusammen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 				9381365522FC2AB300BC6C0F /* ExtensionsListViewController.swift */,
 				932F16DE231530DA000C3B28 /* BadgeLabel.swift */,
 				938315182315CBFA001A1533 /* InstallerViewController.swift */,
+				93D6F6082317EAA8002C2D4A /* SearchViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				938315172315C576001A1533 /* StringExtensions.swift in Sources */,
 				9381367A22FC735D00BC6C0F /* ExtensionListLoader.swift in Sources */,
 				938315192315CBFA001A1533 /* InstallerViewController.swift in Sources */,
+				93D6F6092317EAA8002C2D4A /* SearchViewController.swift in Sources */,
 				9381367622FC4EBA00BC6C0F /* ExtensionList.swift in Sources */,
 				9381365422FC2AB300BC6C0F /* AppDelegate.swift in Sources */,
 				932F16DF231530DA000C3B28 /* BadgeLabel.swift in Sources */,

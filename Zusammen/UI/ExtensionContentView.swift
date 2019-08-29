@@ -143,7 +143,7 @@ class ExtensionContentView: NSView {
         let tempFolderPath = "\(Constants.tempFolderPath)\(folderName)"
         
         // Clear if this folder already exists so that we do not have duplicate item problem.
-        FileHelper.clearFolder(folderPath: tempFolderPath)
+        FileHelper.removeFolder(atPath: tempFolderPath)
         
         if currentExtension?.installationType == .appleStore {
             // Open the app store page on the browser, since apps might not be in the country of the user.

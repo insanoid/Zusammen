@@ -12,7 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_: Notification) {
-       FileHelper.clearTemporaryFolder()
+       FileHelper.removeTemporaryFolder()
     }
 
     func applicationWillTerminate(_: Notification) {}
