@@ -12,10 +12,10 @@
 - [ ] Collect all the extensions out there and store their information.
 - [ ] Make it easy to upload new extensions into the list (Separate it into a different repository).
 - [ ] Make installation process easy - App store download, downloading source and building it, download from releases and other sources.
-- [ ] Provide a way to filter the extensions either by search or by Swift version number.
 - [ ] Handle links from the web-view to open in a browser.
 - [ ] CI integration and release 1.0.0.
 - [ ] Try to install only if Xcode/Swift version matches the code version.
+- [ ] Provide a way to see if an extension is already installed.
 
 ### Contributions and Requests
 
@@ -23,4 +23,4 @@ Any suggestions regarding code quality of the app, generated code's quality, Swi
 
 ### License
 
-[MIT License](LICENSE) / [Karthikeya Udupa](https://karthikeya.co.uk)
+Copyright (c) 2019 [Karthikeya Udupa](https://karthikeya.co.uk)

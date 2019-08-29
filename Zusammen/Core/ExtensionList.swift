@@ -29,7 +29,9 @@ struct ExtensionList: Codable {
             let searchString = searchString != nil && searchString!.count > 0 ? extensionValue.contains(string: searchString!) : true
             return limitInRange && searchString
         }
-        return filtered
+        return filtered.sorted(by: { (extensionOne, extensionTwo) -> Bool in
+            return extensionOne.name < extensionTwo.name
+        })
     }
     
 }

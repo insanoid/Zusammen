@@ -39,6 +39,14 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
              currentExtension = nil
         }
         self.extensionListTableView.reloadData()
+        
+        if currentExtension != nil {
+            let index = self.extensionsList?.firstIndex(where: { (extensionVal) -> Bool in
+                return currentExtension!.name == extensionVal.name
+            })
+            self.extensionListTableView.selectRowIndexes(IndexSet.init(integer: index!), byExtendingSelection: false)
+            self.extensionListTableView.scrollRowToVisible(index!)
+        }
     }
     
     @IBAction func searchFieldAction(_ sender: Any) {

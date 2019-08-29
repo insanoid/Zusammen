@@ -96,7 +96,8 @@ class ExtensionContentView: NSView {
     }
 
     func showLoadingWebView() {
-        loadingWebView = WKWebView(frame: webView.frame)
+        
+        loadingWebView = WKWebView(frame: NSRect.init(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
         loadingWebView?.uiDelegate = self
         loadingWebView?.navigationDelegate = self
 

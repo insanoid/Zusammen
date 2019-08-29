@@ -55,7 +55,12 @@ struct Extension: Codable {
     
     func contains(string: String) -> Bool {
         let searchString = string.uppercased()
-        return self.name.uppercased().contains(searchString) || self.descriptionValue.uppercased().contains(searchString)
+        
+        return self.name.uppercased().contains(searchString) ||             self.descriptionValue.uppercased().contains(searchString) ||
+            (self.tags != nil ? self.tags!.contains(where: { (value) -> Bool in
+                return value.contains(string)
+                }) : true)
+        
     }
     
     func versionContains(swiftVersion: String) -> Bool {
