@@ -710,23 +710,54 @@
                             <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wY-VD-YfI">
                                 <rect key="frame" x="0.0" y="0.0" width="841" height="547"/>
                                 <subviews>
-                                    <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" id="4CP-JH-jfh">
+                                    <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" id="4CP-JH-jfh">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="547"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <customView fixedFrame="YES" id="7Ix-NX-GiE">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+                                            <customView id="7Ix-NX-GiE">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7h-cM-J1c">
+                                                        <rect key="frame" x="8" y="44" width="304" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="22" id="X6i-jQ-SIX"/>
+                                                        </constraints>
+                                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="lqx-Ns-KcE">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </searchFieldCell>
+                                                    </searchField>
+                                                    <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hhf-Z7-FHH">
+                                                        <rect key="frame" x="6" y="13" width="308" height="24"/>
+                                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="nl2-kc-WMR">
+                                                            <font key="font" metaFont="system"/>
+                                                            <segments>
+                                                                <segment label="All" width="151"/>
+                                                                <segment label="Latest (Swift 5.x)" width="150" selected="YES" tag="1"/>
+                                                            </segments>
+                                                        </segmentedCell>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="E7h-cM-J1c" secondAttribute="trailing" constant="8" id="T5m-nl-epe"/>
+                                                    <constraint firstItem="hhf-Z7-FHH" firstAttribute="top" secondItem="E7h-cM-J1c" secondAttribute="bottom" constant="8" id="e1m-q5-sWR"/>
+                                                    <constraint firstItem="hhf-Z7-FHH" firstAttribute="trailing" secondItem="E7h-cM-J1c" secondAttribute="trailing" id="iGR-By-5kR"/>
+                                                    <constraint firstItem="E7h-cM-J1c" firstAttribute="leading" secondItem="7Ix-NX-GiE" secondAttribute="leading" constant="8" id="k5o-80-97e"/>
+                                                    <constraint firstItem="hhf-Z7-FHH" firstAttribute="leading" secondItem="E7h-cM-J1c" secondAttribute="leading" id="m9K-Q5-EaD"/>
+                                                    <constraint firstItem="E7h-cM-J1c" firstAttribute="top" secondItem="7Ix-NX-GiE" secondAttribute="top" constant="9" id="wCc-cw-AoO"/>
+                                                </constraints>
                                             </customView>
                                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="77" horizontalPageScroll="10" verticalLineScroll="77" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="ia7-Cx-boU">
-                                                <rect key="frame" x="0.0" y="96" width="320" height="451"/>
+                                                <rect key="frame" x="0.0" y="76" width="320" height="471"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="sdf-eJ-Kax">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="451"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="471"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="75" rowSizeStyle="automatic" viewBased="YES" id="mhK-ef-2iP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="451"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="471"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -992,7 +1023,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="816.5"/>
+            <point key="canvasLocation" x="-144.5" y="816.5"/>
         </scene>
         <!--Installer View Controller-->
         <scene sceneID="PdY-g2-DNu">
