@@ -9,11 +9,13 @@
 import Cocoa
 import WebKit
 
-class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigationDelegate {
+class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, NSSearchFieldDelegate {
     @IBOutlet var extensionContentView: ExtensionContentView!
     @IBOutlet var extensionListTableView: NSTableView!
+    @IBOutlet var searchField: NSSearchField!
+    @IBOutlet var versionSegmentControl: NSSegmentedControl!
 
-    var extensionsList: ExtensionList?
+    var extensionsList: [Extension]?
     public var currentExtension: Extension? {
         didSet { updateCurrentExtensionUI(selectedExtennsion: currentExtension) }
     }
@@ -24,13 +26,30 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadInitialData()
+        loadData()
     }
 
-    func loadInitialData() {
-        extensionsList = try! ExtensionListLoader.allExtensions()
-        currentExtension = extensionsList?.extensions.first
+    func loadData() {
+        extensionsList = try! ExtensionListLoader.getExtensions(searchField.stringValue,
+                                                                versionSegmentControl.selectedSegment == 1)
+        
+        if currentExtension == nil || extensionsList!.contains(where: { (extensionValue) -> Bool in
+            return currentExtension?.name == extensionValue.name
+        }) == false {
+             currentExtension = nil
+        }
+        self.extensionListTableView.reloadData()
     }
+    
+    @IBAction func searchFieldAction(_ sender: Any) {
+        loadData()
+    }
+    
+    @IBAction func filterButtonAction(_ sender: Any) {
+        loadData()
+    }
+
+    
 }
 
 // MARK: - TableView Delegates and Datasource Methods.
@@ -38,7 +57,7 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
 extension ExtensionsListViewController: NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in _: NSTableView) -> Int {
         if let allExtensions = self.extensionsList {
-            return allExtensions.extensions.count
+            return allExtensions.count
         }
         return 0
     }
@@ -48,7 +67,7 @@ extension ExtensionsListViewController: NSTableViewDelegate, NSTableViewDataSour
                    row: Int) -> NSView? {
         return ExtensionCell.view(tableView: tableView,
                                   owner: self,
-                                  subject: extensionsList?.extensions[row] as AnyObject?)
+                                  subject: extensionsList?[row] as AnyObject?)
     }
 
     func tableView(_: NSTableView, heightOfRow _: Int) -> CGFloat {
@@ -56,9 +75,8 @@ extension ExtensionsListViewController: NSTableViewDelegate, NSTableViewDataSour
     }
 
     func tableView(_: NSTableView, shouldSelectRow row: Int) -> Bool {
-        if row < extensionsList?.extensions.count ?? 0 {
-            let extensionSelected = extensionsList?.extensions[row]
-            updateCurrentExtensionUI(selectedExtennsion: extensionSelected)
+        if row < extensionsList?.count ?? 0 {
+            self.currentExtension = extensionsList?[row]
         }
         return true
     }

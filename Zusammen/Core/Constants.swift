@@ -12,4 +12,6 @@ struct Constants {
 
     // Temporary folder where we will be storing cloned repository and downloaded extensions.
     static let tempFolderPath = "/tmp/zusammen/"
+    // Latest swift version for the filter segment control on the app.
+    static let lastSwiftVersion = "Swift 5"
 }

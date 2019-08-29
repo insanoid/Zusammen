@@ -52,4 +52,16 @@ struct Extension: Codable {
         downloadUrl = try container.decodeIfPresent(String.self, forKey: .downloadUrl)
         swiftVersion = try container.decodeIfPresent(String.self, forKey: .swiftVersion)
     }
+    
+    func contains(string: String) -> Bool {
+        let searchString = string.uppercased()
+        return self.name.uppercased().contains(searchString) || self.descriptionValue.uppercased().contains(searchString)
+    }
+    
+    func versionContains(swiftVersion: String) -> Bool {
+        if let version = self.swiftVersion {
+            return version.hasPrefix(swiftVersion)
+        }
+        return false
+    }
 }

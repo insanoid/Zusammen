@@ -22,4 +22,14 @@ struct ExtensionList: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         extensions = try container.decode([Extension].self, forKey: .extensions)
     }
+    
+    func filter(_ searchString: String?, _ limitToLatest: Bool = false) -> [Extension] {
+        let filtered =  self.extensions.filter { (extensionValue) -> Bool in
+            let limitInRange = limitToLatest ? extensionValue.versionContains(swiftVersion: Constants.lastSwiftVersion) : true
+            let searchString = searchString != nil && searchString!.count > 0 ? extensionValue.contains(string: searchString!) : true
+            return limitInRange && searchString
+        }
+        return filtered
+    }
+    
 }

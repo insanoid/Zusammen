@@ -727,7 +727,13 @@
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            <connections>
+                                                                <action selector="searchFieldAction:" target="XfG-lQ-9wD" id="FeV-R8-lZj"/>
+                                                            </connections>
                                                         </searchFieldCell>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="XfG-lQ-9wD" id="E11-Nb-PE4"/>
+                                                        </connections>
                                                     </searchField>
                                                     <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hhf-Z7-FHH">
                                                         <rect key="frame" x="6" y="13" width="308" height="24"/>
@@ -738,6 +744,9 @@
                                                                 <segment label="Latest (Swift 5.x)" width="150" selected="YES" tag="1"/>
                                                             </segments>
                                                         </segmentedCell>
+                                                        <connections>
+                                                            <action selector="filterButtonAction:" target="XfG-lQ-9wD" id="PI3-T4-Ff0"/>
+                                                        </connections>
                                                     </segmentedControl>
                                                 </subviews>
                                                 <constraints>
@@ -1019,6 +1028,9 @@
                     </view>
                     <connections>
                         <outlet property="extensionContentView" destination="EgR-K0-d8n" id="qDG-FZ-dtl"/>
+                        <outlet property="extensionListTableView" destination="mhK-ef-2iP" id="OLx-X7-vgt"/>
+                        <outlet property="searchField" destination="E7h-cM-J1c" id="Bbp-jF-3I9"/>
+                        <outlet property="versionSegmentControl" destination="hhf-Z7-FHH" id="9fX-Fj-sDo"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

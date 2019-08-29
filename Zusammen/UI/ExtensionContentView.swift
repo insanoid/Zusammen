@@ -61,9 +61,11 @@ class ExtensionContentView: NSView {
 
     func updateCurrentExtensionUI(selectedExtennsion: Extension?) {
         guard let currentExtension = selectedExtennsion else {
+            self.alphaValue = 0.0
             resetView()
             return
         }
+         self.alphaValue = 1.0
         hideLoadingWebView()
         // Reseting view is always better than showing old content while new content loads.
         titleLabel.stringValue = currentExtension.name
