@@ -318,11 +318,11 @@
             <objects>
                 <viewController title="Zusammen - Xcode Source Extension Manager" id="XfG-lQ-9wD" customClass="ExtensionsListViewController" customModule="Zusammen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="841" height="547"/>
+                        <rect key="frame" x="0.0" y="0.0" width="832" height="547"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wY-VD-YfI">
-                                <rect key="frame" x="0.0" y="0.0" width="841" height="547"/>
+                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wY-VD-YfI">
+                                <rect key="frame" x="0.0" y="0.0" width="832" height="547"/>
                                 <subviews>
                                     <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" id="4CP-JH-jfh">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="547"/>
@@ -362,7 +362,7 @@
                                                     <comboBox verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR5-WN-np7">
                                                         <rect key="frame" x="8" y="7" width="307" height="26"/>
                                                         <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="All Tags" bezelStyle="round" completes="NO" numberOfVisibleItems="5" id="YAP-Ao-MBY">
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" size="12" name="Verdana-Bold"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             <objectValues>
@@ -505,7 +505,7 @@
                                         </holdingPriorities>
                                     </splitView>
                                     <customView id="EgR-K0-d8n" customClass="SourceExtensionContentView" customModule="Zusammen" customModuleProvider="target">
-                                        <rect key="frame" x="330" y="0.0" width="511" height="547"/>
+                                        <rect key="frame" x="321" y="0.0" width="511" height="547"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wKk-94-zHu">
