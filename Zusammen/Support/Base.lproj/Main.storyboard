@@ -329,11 +329,11 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <customView id="7Ix-NX-GiE">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7h-cM-J1c">
-                                                        <rect key="frame" x="8" y="44" width="304" height="22"/>
+                                                        <rect key="frame" x="8" y="68" width="304" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="X6i-jQ-SIX"/>
                                                         </constraints>
@@ -347,7 +347,7 @@
                                                         </connections>
                                                     </searchField>
                                                     <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hhf-Z7-FHH">
-                                                        <rect key="frame" x="6" y="13" width="308" height="24"/>
+                                                        <rect key="frame" x="6" y="37" width="308" height="24"/>
                                                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="nl2-kc-WMR">
                                                             <font key="font" metaFont="system"/>
                                                             <segments>
@@ -359,25 +359,42 @@
                                                             <action selector="filterButtonAction:" target="XfG-lQ-9wD" id="dbe-gg-ANk"/>
                                                         </connections>
                                                     </segmentedControl>
+                                                    <comboBox verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR5-WN-np7">
+                                                        <rect key="frame" x="8" y="7" width="307" height="26"/>
+                                                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="All Tags" bezelStyle="round" completes="NO" numberOfVisibleItems="5" id="YAP-Ao-MBY">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            <objectValues>
+                                                                <string>All Tags</string>
+                                                            </objectValues>
+                                                        </comboBoxCell>
+                                                        <connections>
+                                                            <action selector="filterButtonAction:" target="XfG-lQ-9wD" id="IS1-Fy-glq"/>
+                                                        </connections>
+                                                    </comboBox>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="E7h-cM-J1c" secondAttribute="trailing" constant="8" id="T5m-nl-epe"/>
+                                                    <constraint firstItem="DR5-WN-np7" firstAttribute="leading" secondItem="hhf-Z7-FHH" secondAttribute="leading" id="Z04-OT-bpG"/>
                                                     <constraint firstItem="hhf-Z7-FHH" firstAttribute="top" secondItem="E7h-cM-J1c" secondAttribute="bottom" constant="8" id="e1m-q5-sWR"/>
                                                     <constraint firstItem="hhf-Z7-FHH" firstAttribute="trailing" secondItem="E7h-cM-J1c" secondAttribute="trailing" id="iGR-By-5kR"/>
                                                     <constraint firstItem="E7h-cM-J1c" firstAttribute="leading" secondItem="7Ix-NX-GiE" secondAttribute="leading" constant="8" id="k5o-80-97e"/>
                                                     <constraint firstItem="hhf-Z7-FHH" firstAttribute="leading" secondItem="E7h-cM-J1c" secondAttribute="leading" id="m9K-Q5-EaD"/>
                                                     <constraint firstItem="E7h-cM-J1c" firstAttribute="top" secondItem="7Ix-NX-GiE" secondAttribute="top" constant="9" id="wCc-cw-AoO"/>
+                                                    <constraint firstItem="DR5-WN-np7" firstAttribute="trailing" secondItem="hhf-Z7-FHH" secondAttribute="trailing" id="y9L-hR-k2F"/>
+                                                    <constraint firstItem="DR5-WN-np7" firstAttribute="top" secondItem="hhf-Z7-FHH" secondAttribute="bottom" constant="8" id="zKt-T6-Wc2"/>
                                                 </constraints>
                                             </customView>
                                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="77" horizontalPageScroll="10" verticalLineScroll="77" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="ia7-Cx-boU">
-                                                <rect key="frame" x="0.0" y="76" width="320" height="471"/>
+                                                <rect key="frame" x="0.0" y="100" width="320" height="447"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="sdf-eJ-Kax">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="471"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="447"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="75" rowSizeStyle="automatic" viewBased="YES" id="mhK-ef-2iP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="471"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="447"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -406,7 +423,7 @@
                                                                                         <constraint firstAttribute="height" constant="20" id="Fuo-O4-2CX"/>
                                                                                     </constraints>
                                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="3g9-ke-y1g">
-                                                                                        <font key="font" size="13" name="Verdana-Bold"/>
+                                                                                        <font key="font" size="12" name="Verdana-Bold"/>
                                                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                     </textFieldCell>
@@ -429,7 +446,7 @@
                                                                                     <rect key="frame" x="282" y="49" width="26" height="18"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="18" id="Upc-WP-xsK"/>
-                                                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="55" id="nY3-aR-rUh"/>
+                                                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="nY3-aR-rUh"/>
                                                                                     </constraints>
                                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" alignment="center" title="3.0" drawsBackground="YES" usesSingleLineMode="YES" id="N3k-aC-w9p">
                                                                                         <font key="font" size="10" name="Verdana-Bold"/>
@@ -641,6 +658,7 @@
                         <outlet property="extensionContentView" destination="EgR-K0-d8n" id="qDG-FZ-dtl"/>
                         <outlet property="extensionListTableView" destination="mhK-ef-2iP" id="OLx-X7-vgt"/>
                         <outlet property="searchField" destination="E7h-cM-J1c" id="Bbp-jF-3I9"/>
+                        <outlet property="tagsComboBox" destination="DR5-WN-np7" id="FLf-Eh-Gaj"/>
                         <outlet property="versionSegmentControl" destination="hhf-Z7-FHH" id="9fX-Fj-sDo"/>
                     </connections>
                 </viewController>

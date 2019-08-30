@@ -34,6 +34,23 @@ enum InstallationType: String, Codable {
             return "Cannot Install"
         }
     }
+    
+    
+    /// Provides a human string description for the enum type.
+    ///
+    /// - Returns: Description for the type.
+    func description() -> String {
+        switch self {
+        case .appleStore:
+            return "Store"
+        case .githubSource:
+            return "Source"
+        case .githubRelease:
+            return "App"
+        default:
+            return ""
+        }
+    }
 }
 
 /// A structure to store information about Xcode source extension.
@@ -98,6 +115,16 @@ struct SourceExtension: Codable {
         return name.uppercased().contains(searchString) || descriptionValue.uppercased().contains(searchString) ||
             tagContainsString
     }
+    
+    /// Is the source extension tagged with the selected tag value.
+    ///
+    /// - Parameter withTag: Tag value to check.
+    /// - Returns: Indicates if the tag is present in the actual list of tags.
+    func isTagged(withTag: String) -> Bool {
+        return tags != nil ? tags!.contains(where: { (value) -> Bool in
+            value.contains(withTag)
+        }) : false
+    }
 
     /// Check if the source extension's swift version matches the string that is provided.
     ///
@@ -117,3 +144,5 @@ struct SourceExtension: Codable {
         return tagsValue.map { $0.uppercased() }.joined(separator: " · ")
     }
 }
+
+

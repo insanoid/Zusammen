@@ -17,10 +17,10 @@ struct SourceExtensionListLoader {
     /// - Parameter limitToLatest: Limit the extensions which use the latest version of the swift.
     /// - Returns: List of `ExtensionList` from the JSON source file.
     /// - Throws: JSON parsing errors.
-    static func getExtensions(_ searchString: String?, _ limitToLatest: Bool = false) throws -> [SourceExtension] {
+    static func getExtensions(_ searchString: String?, _ limitToLatest: Bool = false, _ selectedTag: String? = nil) throws -> [SourceExtension] {
         let extensionsListJSON = try loadJSONFile("source")
         let jsonData = extensionsListJSON.data(using: .utf8)!
-        return try JSONDecoder().decode(SourceExtensionList.self, from: jsonData).filter(searchString, limitToLatest)
+        return try JSONDecoder().decode(SourceExtensionList.self, from: jsonData).filter(searchString, limitToLatest, selectedTag)
     }
 
     /// Load the JSON file from the bundle.

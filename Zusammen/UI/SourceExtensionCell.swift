@@ -54,7 +54,17 @@ class SourceExtensionCell: NSTableCellView {
         taglineLabel.textColor = .textColor
 
         taglineLabel.alphaValue = 0.7
-        titleLabel.stringValue = extensionValue.name
+
+        let titleString = NSMutableAttributedString.init(string: extensionValue.name)
+        if let installationDescription = currentSourceExtension?.installationType.description() {
+            let installationInformation = " · \(installationDescription.uppercased())"
+            let font = NSFont.init(name: "Verdana-Bold", size: 9)
+            let subtleTextAttribute: [NSAttributedString.Key: Any] = [ .font: font!,
+                                                                       .foregroundColor: NSColor.systemGray]
+            let attributedString = NSAttributedString(string: installationInformation, attributes: subtleTextAttribute)
+            titleString.append(attributedString)
+        }
+        titleLabel.attributedStringValue = titleString
         taglineLabel.stringValue = extensionValue.descriptionValue
         badgeLabel.updateValue(string: extensionValue.swiftVersion)
     }

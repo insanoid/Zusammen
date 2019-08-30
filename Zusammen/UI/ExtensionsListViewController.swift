@@ -14,6 +14,9 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
     @IBOutlet var extensionListTableView: NSTableView!
     @IBOutlet var searchField: NSSearchField!
     @IBOutlet var versionSegmentControl: NSSegmentedControl!
+    @IBOutlet var tagsComboBox: NSComboBox!
+    
+    var uniqueTags: [String]?
 
     var extensionsList: [SourceExtension]?
     public var currentExtension: SourceExtension? {
@@ -26,12 +29,21 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadInitialData()
         loadData()
+    }
+    
+    func loadInitialData() {
+        let allExtensions = try! SourceExtensionListLoader.getExtensions(nil)
+        uniqueTags = SourceExtensionList.uniqueTags(inExtensions: allExtensions)
+        tagsComboBox.addItems(withObjectValues: uniqueTags ?? [])
     }
 
     func loadData() {
+        let selectedTag = self.tagsComboBox.stringValue == "All Tags" ? nil : self.tagsComboBox.stringValue
         extensionsList = try! SourceExtensionListLoader.getExtensions(searchField.stringValue,
-                                                                      versionSegmentControl.selectedSegment == 1)
+                                                                      versionSegmentControl.selectedSegment == 1,
+                                                                      selectedTag)
 
         if currentExtension == nil || extensionsList!.contains(where: { (extensionValue) -> Bool in
             currentExtension?.name == extensionValue.name
