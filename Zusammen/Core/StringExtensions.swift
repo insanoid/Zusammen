@@ -8,26 +8,26 @@
 
 import Foundation
 
+/// Extension to store all the possible generic string functions.
 extension String {
-    
     /// Runs the string as a command on the shell.
     ///
-    /// - returns: Response from the stdout after running the command.
-    func runAsCommand() -> String {
+    /// - Parameter completion: A completion handler that provides the response and the stdout value.
+    func runAsCommand(completion: @escaping (_ result: Bool, _ output: String) -> Void) {
         let pipe = Pipe()
         let task = Process()
         task.launchPath = "/bin/sh"
-        task.arguments = ["-c", String(format:"%@", self)]
+        task.arguments = ["-c", String(format: "%@", self)]
         task.standardOutput = pipe
         let file = pipe.fileHandleForReading
         task.launch()
-        if let result = NSString(data: file.readDataToEndOfFile(), encoding: String.Encoding.utf8.rawValue) {
-            return result as String
-        }
-        else {
+
+        if let result = String(data: file.readDataToEndOfFile(), encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) {
+            completion(true, result)
+        } else {
             let errorString = " * Error running command - Unable to initialize string from file data."
             print(errorString)
-            return errorString
+            completion(false, errorString)
         }
     }
 }

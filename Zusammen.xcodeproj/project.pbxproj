@@ -10,7 +10,7 @@
 		930DC6FE23166C750087FABA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DC6FD23166C750087FABA /* Constants.swift */; };
 		930DC70023166D8E0087FABA /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DC6FF23166D8E0087FABA /* FileHelper.swift */; };
 		932F16DF231530DA000C3B28 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F16DE231530DA000C3B28 /* BadgeLabel.swift */; };
-		9348E6BD22FDD8ED0090F0DE /* ExtensionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */; };
+		9348E6BD22FDD8ED0090F0DE /* SourceExtensionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9348E6BC22FDD8ED0090F0DE /* SourceExtensionCell.swift */; };
 		934F65D82302FB04006EA517 /* placeholder.html in Resources */ = {isa = PBXBuildFile; fileRef = 934F65D72302FB04006EA517 /* placeholder.html */; };
 		934F65D92302FB04006EA517 /* placeholder.html in Resources */ = {isa = PBXBuildFile; fileRef = 934F65D72302FB04006EA517 /* placeholder.html */; };
 		9381365422FC2AB300BC6C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381365322FC2AB300BC6C0F /* AppDelegate.swift */; };
@@ -19,12 +19,13 @@
 		9381365B22FC2AB600BC6C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9381365922FC2AB600BC6C0F /* Main.storyboard */; };
 		9381366722FC2AB700BC6C0F /* ZusammenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381366622FC2AB700BC6C0F /* ZusammenTests.swift */; };
 		9381367222FC2B1F00BC6C0F /* source.json in Resources */ = {isa = PBXBuildFile; fileRef = 9381367122FC2B1F00BC6C0F /* source.json */; };
-		9381367622FC4EBA00BC6C0F /* ExtensionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381367422FC4EBA00BC6C0F /* ExtensionList.swift */; };
-		9381367722FC4EBA00BC6C0F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381367522FC4EBA00BC6C0F /* Extension.swift */; };
-		9381367A22FC735D00BC6C0F /* ExtensionListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381367922FC735D00BC6C0F /* ExtensionListLoader.swift */; };
+		9381367622FC4EBA00BC6C0F /* SourceExtensionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381367422FC4EBA00BC6C0F /* SourceExtensionList.swift */; };
+		9381367722FC4EBA00BC6C0F /* SourceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381367522FC4EBA00BC6C0F /* SourceExtension.swift */; };
+		9381367A22FC735D00BC6C0F /* SourceExtensionListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381367922FC735D00BC6C0F /* SourceExtensionListLoader.swift */; };
 		938315172315C576001A1533 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938315162315C576001A1533 /* StringExtensions.swift */; };
-		938315192315CBFA001A1533 /* InstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938315182315CBFA001A1533 /* InstallerViewController.swift */; };
-		93BF48B723022E25008BF88C /* ExtensionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF48B623022E25008BF88C /* ExtensionContentView.swift */; };
+		93B6619E231919A1002E697B /* GithubHeaderRemovalScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 93B6619D231919A1002E697B /* GithubHeaderRemovalScript.js */; };
+		93B661A0231921AB002E697B /* Installer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B6619F231921AB002E697B /* Installer.swift */; };
+		93BF48B723022E25008BF88C /* SourceExtensionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF48B623022E25008BF88C /* SourceExtensionContentView.swift */; };
 		F6400DB7E47D8E909C1BBDCF /* Pods_Zusammen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF2EF2BC0E69499AC965732 /* Pods_Zusammen.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +44,7 @@
 		930DC6FD23166C750087FABA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		930DC6FF23166D8E0087FABA /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		932F16DE231530DA000C3B28 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
-		9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCell.swift; sourceTree = "<group>"; };
+		9348E6BC22FDD8ED0090F0DE /* SourceExtensionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceExtensionCell.swift; sourceTree = "<group>"; };
 		934F65D72302FB04006EA517 /* placeholder.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = placeholder.html; sourceTree = "<group>"; };
 		9381365022FC2AB300BC6C0F /* Zusammen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zusammen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9381365322FC2AB300BC6C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,12 +57,13 @@
 		9381366622FC2AB700BC6C0F /* ZusammenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZusammenTests.swift; sourceTree = "<group>"; };
 		9381366822FC2AB700BC6C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9381367122FC2B1F00BC6C0F /* source.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = source.json; sourceTree = "<group>"; };
-		9381367422FC4EBA00BC6C0F /* ExtensionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionList.swift; sourceTree = "<group>"; };
-		9381367522FC4EBA00BC6C0F /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		9381367922FC735D00BC6C0F /* ExtensionListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionListLoader.swift; sourceTree = "<group>"; };
+		9381367422FC4EBA00BC6C0F /* SourceExtensionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceExtensionList.swift; sourceTree = "<group>"; };
+		9381367522FC4EBA00BC6C0F /* SourceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceExtension.swift; sourceTree = "<group>"; };
+		9381367922FC735D00BC6C0F /* SourceExtensionListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceExtensionListLoader.swift; sourceTree = "<group>"; };
 		938315162315C576001A1533 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		938315182315CBFA001A1533 /* InstallerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallerViewController.swift; sourceTree = "<group>"; };
-		93BF48B623022E25008BF88C /* ExtensionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionContentView.swift; sourceTree = "<group>"; };
+		93B6619D231919A1002E697B /* GithubHeaderRemovalScript.js */ = {isa = PBXFileReference; explicitFileType = sourcecode.javascript; path = GithubHeaderRemovalScript.js; sourceTree = "<group>"; };
+		93B6619F231921AB002E697B /* Installer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installer.swift; sourceTree = "<group>"; };
+		93BF48B623022E25008BF88C /* SourceExtensionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceExtensionContentView.swift; sourceTree = "<group>"; };
 		9EF2EF2BC0E69499AC965732 /* Pods_Zusammen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zusammen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6CE620CC31215EDBDB30DF9 /* Pods-Zusammen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zusammen.debug.xcconfig"; path = "Target Support Files/Pods-Zusammen/Pods-Zusammen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,11 +90,10 @@
 		934F65D52302FA8B006EA517 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9348E6BC22FDD8ED0090F0DE /* ExtensionCell.swift */,
-				93BF48B623022E25008BF88C /* ExtensionContentView.swift */,
+				9348E6BC22FDD8ED0090F0DE /* SourceExtensionCell.swift */,
+				93BF48B623022E25008BF88C /* SourceExtensionContentView.swift */,
 				9381365522FC2AB300BC6C0F /* ExtensionsListViewController.swift */,
 				932F16DE231530DA000C3B28 /* BadgeLabel.swift */,
-				938315182315CBFA001A1533 /* InstallerViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -138,6 +139,7 @@
 				934F65D52302FA8B006EA517 /* UI */,
 				934F65D72302FB04006EA517 /* placeholder.html */,
 				9381367122FC2B1F00BC6C0F /* source.json */,
+				93B6619D231919A1002E697B /* GithubHeaderRemovalScript.js */,
 			);
 			path = Zusammen;
 			sourceTree = "<group>";
@@ -154,11 +156,12 @@
 		9381367322FC4D4C00BC6C0F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				9381367522FC4EBA00BC6C0F /* Extension.swift */,
-				9381367422FC4EBA00BC6C0F /* ExtensionList.swift */,
+				9381367522FC4EBA00BC6C0F /* SourceExtension.swift */,
+				9381367422FC4EBA00BC6C0F /* SourceExtensionList.swift */,
 				938315162315C576001A1533 /* StringExtensions.swift */,
 				930DC6FD23166C750087FABA /* Constants.swift */,
 				930DC6FF23166D8E0087FABA /* FileHelper.swift */,
+				93B6619F231921AB002E697B /* Installer.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -166,7 +169,7 @@
 		9381367822FC61F400BC6C0F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				9381367922FC735D00BC6C0F /* ExtensionListLoader.swift */,
+				9381367922FC735D00BC6C0F /* SourceExtensionListLoader.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				9381365822FC2AB600BC6C0F /* Assets.xcassets in Resources */,
 				9381367222FC2B1F00BC6C0F /* source.json in Resources */,
+				93B6619E231919A1002E697B /* GithubHeaderRemovalScript.js in Resources */,
 				934F65D82302FB04006EA517 /* placeholder.html in Resources */,
 				9381365B22FC2AB600BC6C0F /* Main.storyboard in Resources */,
 			);
@@ -337,16 +341,16 @@
 			files = (
 				9381365622FC2AB300BC6C0F /* ExtensionsListViewController.swift in Sources */,
 				930DC6FE23166C750087FABA /* Constants.swift in Sources */,
-				9348E6BD22FDD8ED0090F0DE /* ExtensionCell.swift in Sources */,
+				9348E6BD22FDD8ED0090F0DE /* SourceExtensionCell.swift in Sources */,
 				930DC70023166D8E0087FABA /* FileHelper.swift in Sources */,
-				93BF48B723022E25008BF88C /* ExtensionContentView.swift in Sources */,
+				93BF48B723022E25008BF88C /* SourceExtensionContentView.swift in Sources */,
+				93B661A0231921AB002E697B /* Installer.swift in Sources */,
 				938315172315C576001A1533 /* StringExtensions.swift in Sources */,
-				9381367A22FC735D00BC6C0F /* ExtensionListLoader.swift in Sources */,
-				938315192315CBFA001A1533 /* InstallerViewController.swift in Sources */,
-				9381367622FC4EBA00BC6C0F /* ExtensionList.swift in Sources */,
+				9381367A22FC735D00BC6C0F /* SourceExtensionListLoader.swift in Sources */,
+				9381367622FC4EBA00BC6C0F /* SourceExtensionList.swift in Sources */,
 				9381365422FC2AB300BC6C0F /* AppDelegate.swift in Sources */,
 				932F16DF231530DA000C3B28 /* BadgeLabel.swift in Sources */,
-				9381367722FC4EBA00BC6C0F /* Extension.swift in Sources */,
+				9381367722FC4EBA00BC6C0F /* SourceExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,17 +10,17 @@ import Cocoa
 import WebKit
 
 class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, NSSearchFieldDelegate {
-    @IBOutlet var extensionContentView: ExtensionContentView!
+    @IBOutlet var extensionContentView: SourceExtensionContentView!
     @IBOutlet var extensionListTableView: NSTableView!
     @IBOutlet var searchField: NSSearchField!
     @IBOutlet var versionSegmentControl: NSSegmentedControl!
 
-    var extensionsList: [Extension]?
-    public var currentExtension: Extension? {
+    var extensionsList: [SourceExtension]?
+    public var currentExtension: SourceExtension? {
         didSet { updateCurrentExtensionUI(selectedExtennsion: currentExtension) }
     }
 
-    func updateCurrentExtensionUI(selectedExtennsion: Extension?) {
+    func updateCurrentExtensionUI(selectedExtennsion: SourceExtension?) {
         extensionContentView.currentExtension = selectedExtennsion
     }
 
@@ -30,34 +30,32 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
     }
 
     func loadData() {
-        extensionsList = try! ExtensionListLoader.getExtensions(searchField.stringValue,
-                                                                versionSegmentControl.selectedSegment == 1)
-        
+        extensionsList = try! SourceExtensionListLoader.getExtensions(searchField.stringValue,
+                                                                      versionSegmentControl.selectedSegment == 1)
+
         if currentExtension == nil || extensionsList!.contains(where: { (extensionValue) -> Bool in
-            return currentExtension?.name == extensionValue.name
+            currentExtension?.name == extensionValue.name
         }) == false {
-             currentExtension = nil
+            currentExtension = nil
         }
-        self.extensionListTableView.reloadData()
-        
+        extensionListTableView.reloadData()
+
         if currentExtension != nil {
-            let index = self.extensionsList?.firstIndex(where: { (extensionVal) -> Bool in
-                return currentExtension!.name == extensionVal.name
+            let index = extensionsList?.firstIndex(where: { (extensionVal) -> Bool in
+                currentExtension!.name == extensionVal.name
             })
-            self.extensionListTableView.selectRowIndexes(IndexSet.init(integer: index!), byExtendingSelection: false)
-            self.extensionListTableView.scrollRowToVisible(index!)
+            extensionListTableView.selectRowIndexes(IndexSet(integer: index!), byExtendingSelection: false)
+            extensionListTableView.scrollRowToVisible(index!)
         }
     }
-    
-    @IBAction func searchFieldAction(_ sender: Any) {
-        loadData()
-    }
-    
-    @IBAction func filterButtonAction(_ sender: Any) {
+
+    @IBAction func searchFieldAction(_: Any) {
         loadData()
     }
 
-    
+    @IBAction func filterButtonAction(_: Any) {
+        loadData()
+    }
 }
 
 // MARK: - TableView Delegates and Datasource Methods.
@@ -73,18 +71,18 @@ extension ExtensionsListViewController: NSTableViewDelegate, NSTableViewDataSour
     func tableView(_ tableView: NSTableView,
                    viewFor _: NSTableColumn?,
                    row: Int) -> NSView? {
-        return ExtensionCell.view(tableView: tableView,
-                                  owner: self,
-                                  subject: extensionsList?[row] as AnyObject?)
+        return SourceExtensionCell.view(tableView: tableView,
+                                        owner: self,
+                                        subject: extensionsList?[row] as AnyObject?)
     }
 
     func tableView(_: NSTableView, heightOfRow _: Int) -> CGFloat {
-        return CGFloat(ExtensionCell.height)
+        return CGFloat(SourceExtensionCell.height)
     }
 
     func tableView(_: NSTableView, shouldSelectRow row: Int) -> Bool {
         if row < extensionsList?.count ?? 0 {
-            self.currentExtension = extensionsList?[row]
+            currentExtension = extensionsList?[row]
         }
         return true
     }

@@ -9,9 +9,10 @@
 import Foundation
 
 struct Constants {
-
     // Temporary folder where we will be storing cloned repository and downloaded extensions.
     static let tempFolderPath = "/tmp/zusammen/"
     // Latest swift version for the filter segment control on the app.
-    static let lastSwiftVersion = "Swift 5"
+    static let lastSwiftVersion = "5"
+    // URL for the System Preference > Extensions panel.
+    static let extensionPreferencesURL = "/System/Library/PreferencePanes/Extensions.prefPane"
 }

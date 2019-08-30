@@ -396,7 +396,7 @@
                                                                     </textFieldCell>
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
-                                                                        <tableCellView identifier="extensionCellIdentifier" wantsLayer="YES" id="Lqw-h8-0XS" customClass="ExtensionCell" customModule="Zusammen" customModuleProvider="target">
+                                                                        <tableCellView identifier="extensionCellIdentifier" wantsLayer="YES" id="Lqw-h8-0XS" customClass="SourceExtensionCell" customModule="Zusammen" customModuleProvider="target">
                                                                             <rect key="frame" x="1" y="1" width="317" height="75"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
@@ -487,7 +487,7 @@
                                             <real value="250"/>
                                         </holdingPriorities>
                                     </splitView>
-                                    <customView id="EgR-K0-d8n" customClass="ExtensionContentView" customModule="Zusammen" customModuleProvider="target">
+                                    <customView id="EgR-K0-d8n" customClass="SourceExtensionContentView" customModule="Zusammen" customModuleProvider="target">
                                         <rect key="frame" x="330" y="0.0" width="511" height="547"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
@@ -647,53 +647,6 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-144.5" y="816.5"/>
-        </scene>
-        <!--Installer View Controller-->
-        <scene sceneID="PdY-g2-DNu">
-            <objects>
-                <viewController id="fOy-DG-oQ9" customClass="InstallerViewController" customModule="Zusammen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="v3l-et-Q2r">
-                        <rect key="frame" x="0.0" y="0.0" width="620" height="463"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU9-l5-Pnt">
-                                <rect key="frame" x="0.0" y="0.0" width="620" height="463"/>
-                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="zhi-Ut-Uor">
-                                    <rect key="frame" x="0.0" y="0.0" width="620" height="463"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="dan-bF-eo2">
-                                            <rect key="frame" x="0.0" y="0.0" width="620" height="463"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="620" height="463"/>
-                                            <size key="maxSize" width="620" height="10000000"/>
-                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                        </textView>
-                                    </subviews>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="w8S-cA-knO">
-                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="5kb-oV-b0Q">
-                                    <rect key="frame" x="604" y="0.0" width="16" height="463"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="lU9-l5-Pnt" firstAttribute="width" secondItem="v3l-et-Q2r" secondAttribute="width" id="3w3-Dc-hLG"/>
-                            <constraint firstItem="lU9-l5-Pnt" firstAttribute="height" secondItem="v3l-et-Q2r" secondAttribute="height" id="4ro-Z2-9eL"/>
-                            <constraint firstItem="lU9-l5-Pnt" firstAttribute="leading" secondItem="v3l-et-Q2r" secondAttribute="leading" id="pfg-aQ-v3N"/>
-                            <constraint firstItem="lU9-l5-Pnt" firstAttribute="top" secondItem="v3l-et-Q2r" secondAttribute="top" id="uX1-0C-jPD"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="Lbs-cC-G5O" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-99" y="1569"/>
         </scene>
     </scenes>
 </document>

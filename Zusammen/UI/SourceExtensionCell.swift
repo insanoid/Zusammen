@@ -1,5 +1,5 @@
 //
-//  ExtensionCell.swift
+//  SourceExtensionCell.swift
 //  Zusammen
 //
 //  Created by Karthikeya Udupa on 09/08/2019.
@@ -10,21 +10,24 @@ import Cocoa
 import Foundation
 import QuartzCore
 
-/// NSTableCellView to show information about the sensor.
-class ExtensionCell: NSTableCellView {
+/// NSTableCellView to show information about the `SourceExtension`.
+class SourceExtensionCell: NSTableCellView {
     static var identifier = NSUserInterfaceItemIdentifier(rawValue: "extensionCellIdentifier")
     static var height = 75
+
     @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var taglineLabel: NSTextField!
     @IBOutlet var badgeLabel: BadgeLabel!
     @IBOutlet var thumbnailImageView: NSImageView!
-    private var currentExtension: Extension?
+
+    /// Current `SourceExtension` that need to be shown in the cell.
+    private var currentSourceExtension: SourceExtension?
 
     class func view(tableView: NSTableView,
                     owner: AnyObject?,
                     subject: AnyObject?) -> NSView? {
-        if let view = tableView.makeView(withIdentifier: ExtensionCell.identifier, owner: owner) as? ExtensionCell {
-            if let Extension = subject as? Extension {
+        if let view = tableView.makeView(withIdentifier: SourceExtensionCell.identifier, owner: owner) as? SourceExtensionCell {
+            if let Extension = subject as? SourceExtension {
                 view.setCurrentExtension(currentExtension: Extension)
             }
             return view
@@ -32,8 +35,8 @@ class ExtensionCell: NSTableCellView {
         return nil
     }
 
-    private func setCurrentExtension(currentExtension: Extension) {
-        self.currentExtension = currentExtension
+    private func setCurrentExtension(currentExtension: SourceExtension) {
+        currentSourceExtension = currentExtension
         updateUI()
     }
 
@@ -44,7 +47,7 @@ class ExtensionCell: NSTableCellView {
     }
 
     func updateUI() {
-        guard let extensionValue = self.currentExtension else {
+        guard let extensionValue = self.currentSourceExtension else {
             return
         }
         titleLabel.textColor = .textColor

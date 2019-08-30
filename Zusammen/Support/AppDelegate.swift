@@ -10,12 +10,10 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
     func applicationDidFinishLaunching(_: Notification) {
-       FileHelper.removeTemporaryFolder()
+        // First thing we do is clear all the temporary files created by the app previously.
+        FileHelper.removeTemporaryFolder()
     }
 
     func applicationWillTerminate(_: Notification) {}
-    
-    
 }

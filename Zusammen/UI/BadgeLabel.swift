@@ -34,7 +34,7 @@ class BadgeLabel: NSTextField {
     /// Update the value of the label if the value is nil then hide the label.
     func updateValue(string: String?) {
         if let value = string {
-            stringValue = value
+            stringValue = "Swift \(value)"
             isHidden = false
         } else {
             isHidden = true
