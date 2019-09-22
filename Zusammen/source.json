@@ -207,6 +207,139 @@
         "readme_url": "https://github.com/mattgallagher/CwlWhitespace/blob/master/README.md",
         "installation_type": "github_source",
         "swift_version": "4.2"
+    },
+    {
+        "name": "Snowonder",
+        "download_url": "https://github.com/Karetski/Snowonder/releases/latest/download/Snowonder.app.zip",
+        "description": "Convenient formatting operations for Import Declarations.",
+        "tags": ["formatter", "imports"],
+        "source_url": "https://github.com/Karetski/Snowonder",
+        "readme_url": "https://github.com/Karetski/Snowonder/blob/master/README.md",
+        "installation_type": "github_release",
+        "swift_version": "3"
+    },
+    {
+        "name": "XAlign",
+        "download_url": "https://github.com/qfish/XAlign/releases/latest/download/XAlign.app.zip",
+        "description": "Source Editor extension to align regular code. It can align anything by using custom alignment patterns.",
+        "tags": ["formatter", "alignment"],
+        "source_url": "https://github.com/qfish/XAlign",
+        "readme_url": "https://github.com/qfish/XAlign/blob/master/README.md",
+        "installation_type": "github_release"
+    },
+    {
+        "name": "xcsort",
+        "download_url": "https://itunes.apple.com/app/xcsort/id1153337296",
+        "description": "Source Editor extension to align regular code. It can align anything by using custom alignment patterns.",
+        "tags": ["formatter", "alignment"],
+        "readme_url": "http://apps.brrm.ru/xcsort",
+        "installation_type": "app_store_link"
+    },
+    {
+        "name": "SwiftFormat",
+        "download_url": "https://github.com/nicklockwood/SwiftFormat/tree/master/EditorExtension/SwiftFormat%20for%20Xcode.app",
+        "description": "Source Editor extension to align regular code. It can align anything by using custom alignment patterns.",
+        "tags": ["formatter", "code-formatting"],
+        "source_url": "https://github.com/nicklockwood/SwiftFormat",
+        "readme_url": "https://github.com/nicklockwood/SwiftFormat/blob/master/README.md",
+        "swift_version": "5",
+        "installation_type": "app_file"
+    },
+    {
+        "name": "Swimat",
+        "download_url": "https://github.com/Jintin/Swimat/releases/latest/download/Swimat.app.zip",
+        "description": "Swimat is an Xcode plug-in to format your Swift code.",
+        "tags": ["formatter", "code-formatting"],
+        "source_url": "https://github.com/Jintin/Swimat",
+        "readme_url": "https://github.com/Jintin/Swimat/blob/master/README.md",
+        "swift_version": "5",
+        "installation_type": "github_release"
+    },
+    {
+        "name": "PPImportArrangerExtension",
+        "download_url": "https://github.com/VernonVan/PPImportArrangerExtension/releases/latest/download/PPImportArrangerExtension.app.zip",
+        "description": "Sort imports in the source files.",
+        "tags": ["formatter", "import"],
+        "source_url": "https://github.com/VernonVan/PPImportArrangerExtension",
+        "readme_url": "https://github.com/VernonVan/PPImportArrangerExtension/blob/master/README.md",
+        "installation_type": "github_release"
+    },
+    {
+        "name": "Lines Sorter",
+        "download_url": "https://github.com/V8tr/LinesSorter-Xcode-Extension/releases/download/v0.1/LinesSorter-v0.1.zip",
+        "description": "Makes it easy to keep your import statements and long code lists organized, uniform and easy-to-read.",
+        "tags": ["formatter", "import"],
+        "source_url": "https://github.com/V8tr/LinesSorter-Xcode-Extension",
+        "readme_url": "https://github.com/V8tr/LinesSorter-Xcode-Extension/blob/master/README.md",
+        "installation_type": "github_release",
+        "swift_version": "4"
+    },
+    {
+        "name": "AccessControlKitty",
+        "download_url": "https://itunes.apple.com/us/app/accesscontrolkitty/id1450391666",
+        "description": "Change the access control level of Swift code selection.",
+        "tags": ["formatter", "utility"],
+        "source_url": "https://github.com/zoejessica/accesscontrolkitty",
+        "readme_url": "https://github.com/zoejessica/accesscontrolkitty/blob/master/README.md",
+        "installation_type": "app_store_link",
+        "swift_version": "4"
+    },
+    {
+        "name": "TrickerX",
+        "download_url": "https://github.com/wleii/TrickerX/raw/master/app/TrickerX.dmg",
+        "description": "Help you make Swift Codable CodingKeys automatically.",
+        "tags": ["code-generation", "codeable"],
+        "source_url": "https://github.com/wleii/TrickerX",
+        "readme_url": "https://github.com/wleii/TrickerX/blob/master/README.md",
+        "installation_type": "dmg_file",
+        "swift_version": "4"
+    },
+    {
+        "name": "Swift Mock Generator",
+        "download_url": "https://github.com/seanhenry/SwiftMockGeneratorForXcode/releases/latest/download/Swift.Mock.Generator.for.Xcode.dmg",
+        "description": "Generate spy, stub, dummy, and partial spy classes automatically.",
+        "tags": ["code-generation", "mock"],
+        "source_url": "https://github.com/seanhenry/SwiftMockGeneratorForXcode",
+        "readme_url": "https://github.com/seanhenry/SwiftMockGeneratorForXcode/blob/master/README.md",
+        "installation_type": "dmg_link",
+        "swift_version": "5"
+    },
+    {
+        "name": "JSON-to-Swift-Converter",
+        "download_url": "https://github.com/mrlegowatch/JSON-to-Swift-Converter",
+        "description": "Convert JSON format to Swift code.",
+        "tags": ["code-generation", "JSON-to-Swift"],
+        "source_url": "https://github.com/mrlegowatch/JSON-to-Swift-Converter",
+        "readme_url": "https://github.com/mrlegowatch/JSON-to-Swift-Converter/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "4"
+    },
+    {
+        "name": "JSON2Swift",
+        "download_url": "https://itunes.apple.com/us/app/json2swift/id1208964041",
+        "description": "Convert JSON format to Swift code.",
+        "tags": ["code-generation", "JSON-to-Swift"],
+        "readme_url": "https://itunes.apple.com/us/app/json2swift/id1208964041",
+        "installation_type": "app_store_link"
+    }, {
+        "name": "CodeGenerator",
+        "download_url": "https://github.com/WANGjieJacques/CodeGenerator/",
+        "description": "Generate mock and equatable.",
+        "tags": ["code-generation", "equatable", "mock"],
+        "source_url": "https://github.com/WANGjieJacques/CodeGenerator/",
+        "readme_url": "https://github.com/WANGjieJacques/CodeGenerator/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "4"
+    },
+    {
+        "name": "Jumpy",
+        "download_url": "https://github.com/eddiekaiger/Jumpy",
+        "description": "Extension for jumping across multiple lines of code.",
+        "tags": ["utility"],
+        "source_url": "https://github.com/eddiekaiger/Jumpy",
+        "readme_url": "https://github.com/eddiekaiger/Jumpy/blob/master/README.md",
+        "installation_type": "github_source",
+        "swift_version": "4"
     }
     ]
 }

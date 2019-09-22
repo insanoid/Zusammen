@@ -11,6 +11,42 @@ import Foundation
 
 /// Installation of various kind of source extension.
 extension SourceExtension {
+    /// Find and return the user's application folder path.
+    private func userApplicationPath() -> String {
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.applicationDirectory,
+                                                           .userDomainMask, true)
+        return dirPaths.first!
+    }
+
+    /// An alert dialog that is shown when the app installation has completed.
+    /// - Parameter installStatus: Status of the installation.
+    private func installationCompleteDialog(_ installStatus: Bool) -> NSAlert {
+        let alert: NSAlert = NSAlert()
+        if installStatus {
+            alert.messageText = "The application has been installed, enable the extensions in the system preference."
+            alert.alertStyle = .informational
+        } else {
+            alert.messageText = "We were unable to install the application, please click on the application and then enable the extensions in the system preferences."
+            alert.alertStyle = .warning
+        }
+        alert.addButton(withTitle: "Close")
+        alert.addButton(withTitle: "Extensions Preferences")
+        return alert
+    }
+
+    /// Show a dialog when installation of the error message is shown.
+    /// - Parameter errorMessage: Custom error message that can be shown to the user.
+    private func showInstallationFailureDialog(_ errorMessage: String?) {
+        DispatchQueue.main.async {
+            let alert: NSAlert = NSAlert()
+            alert.messageText = errorMessage ?? "The installation was not successful. Please open the source code webpage and install manually."
+            alert.alertStyle = .warning
+            _ = alert.runModal()
+        }
+    }
+
+    /// Install the source extension based on the configuration provided.
+    /// - Parameter completion: Result of the installation.
     func install(_ completion: @escaping (_ result: Bool) -> Void) {
         // If there is no download URL then we cannot do much about it.
         // This condition should never be triggered as the button would be disabled in case there is no URL.
@@ -46,37 +82,59 @@ extension SourceExtension {
                 NSWorkspace.shared.openFile(tempFolderPath)
                 completion(result)
             }
-        } else if installationType == .githubRelease {
+        } else {
             let fileName = downloadURL.lastPathComponent
             FileHelper.downloadFile(fileURL: downloadURL, destination: tempFolderPath, fileName: fileName) { successful, errorMessage in
-                if successful {
-                    let input = "unzip -o '\(tempFolderPath)/\(fileName)' -d ~/Applications/"
+                if successful == false {
+                    self.showInstallationFailureDialog(errorMessage)
+                    completion(false)
+                    return
+                }
+
+                if self.installationType == .githubRelease {
+                    let input = "unzip -o '\(tempFolderPath)/\(fileName)' -d \(self.userApplicationPath())"
                     input.runAsCommand(completion: { _, message in
                         print(message)
                         let appName = fileName.components(separatedBy: ".").first!
-                        NSWorkspace.shared.launchApplication(appName)
-                        NSWorkspace.shared.openFile("~/Applications/")
+                        let launchStatus = NSWorkspace.shared.launchApplication(appName)
                         DispatchQueue.main.async {
-                            let alert: NSAlert = NSAlert()
-                            alert.messageText = "The application has been installed, enable the extensions in the system preference."
-                            alert.alertStyle = .informational
-                            alert.addButton(withTitle: "Close")
-                            alert.addButton(withTitle: "Extensions Preferences")
+                            let alert = self.installationCompleteDialog(launchStatus)
                             let alertResult = alert.runModal()
                             if alertResult == .alertSecondButtonReturn {
                                 NSWorkspace.shared.open(URL(fileURLWithPath: Constants.extensionPreferencesURL))
                             }
                             completion(true)
                         }
+                        NSWorkspace.shared.open(URL(fileURLWithPath: self.userApplicationPath(), isDirectory: true))
                     })
-                } else {
-                    DispatchQueue.main.async {
-                        let alert: NSAlert = NSAlert()
-                        alert.messageText = errorMessage ?? "The installation was not successful. Please open the source code webpage and install manually."
-                        alert.alertStyle = .warning
-                        _ = alert.runModal()
-                        completion(false)
-                    }
+                } else if self.installationType == .appFile {
+                    let input = "cp -rf '\(tempFolderPath)/\(fileName)' \(self.userApplicationPath())"
+                    input.runAsCommand(completion: { _, _ in
+                        let appName = fileName.components(separatedBy: ".").first!
+                        let launchStatus = NSWorkspace.shared.launchApplication(appName)
+                        DispatchQueue.main.async {
+                            let alert = self.installationCompleteDialog(launchStatus)
+                            let alertResult = alert.runModal()
+                            if alertResult == .alertSecondButtonReturn {
+                                NSWorkspace.shared.open(URL(fileURLWithPath: Constants.extensionPreferencesURL))
+                            }
+                            completion(true)
+                        }
+                        NSWorkspace.shared.open(URL(fileURLWithPath: self.userApplicationPath(), isDirectory: true))
+                    })
+                } else if self.installationType == .dmgFile {
+                    let input = "hdiutil attach '\(tempFolderPath)/\(fileName)'"
+                    let appName = fileName.components(separatedBy: ".").first!
+                    input.runAsCommand(completion: { _, _ in
+                        DispatchQueue.main.async {
+                            let alert: NSAlert = NSAlert()
+                            alert.messageText = "Copy the file from the mounted volume to the Applications folder."
+                            alert.alertStyle = .informational
+                            _ = alert.runModal()
+                            completion(true)
+                        }
+                    })
+                    NSWorkspace.shared.open(URL(fileURLWithPath: "/Volumes/\(appName)", isDirectory: true))
                 }
             }
         }

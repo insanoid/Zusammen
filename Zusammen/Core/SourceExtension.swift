@@ -12,11 +12,15 @@ import Foundation
 /// - appleStore: Is a link for apple store - it will be opened in the browser.
 /// - githubSource: The source code is on github - it can be cloned to the tmp folder.
 /// - githubRelease: A zipped version of the extension .app file is in the github. Pull and install the latest release.
+/// - dmgFile: Install from a DMG file.
+/// - appFile: Install from a direct .app file.
 /// - unknown: In case there is a future release type or a wrong one, app shouldn't break.
 enum InstallationType: String, Codable {
     case appleStore = "app_store_link"
     case githubSource = "github_source"
     case githubRelease = "github_release"
+    case dmgFile = "dmg_file"
+    case appFile = "app_file"
     case unknown
 
     /// Provide the installation button title based on the installation Type.
@@ -28,14 +32,13 @@ enum InstallationType: String, Codable {
             return "Install (Store)"
         case .githubSource:
             return "Install (Xcode Project)"
-        case .githubRelease:
+        case .githubRelease, .appFile, .dmgFile:
             return "Install (Download Ext.)"
         default:
             return "Cannot Install"
         }
     }
-    
-    
+
     /// Provides a human string description for the enum type.
     ///
     /// - Returns: Description for the type.
@@ -45,10 +48,10 @@ enum InstallationType: String, Codable {
             return "Store"
         case .githubSource:
             return "Source"
-        case .githubRelease:
+        case .githubRelease, .appFile, .dmgFile:
             return "App"
         default:
-            return ""
+            return "Unknown"
         }
     }
 }
@@ -115,7 +118,7 @@ struct SourceExtension: Codable {
         return name.uppercased().contains(searchString) || descriptionValue.uppercased().contains(searchString) ||
             tagContainsString
     }
-    
+
     /// Is the source extension tagged with the selected tag value.
     ///
     /// - Parameter withTag: Tag value to check.
@@ -144,5 +147,3 @@ struct SourceExtension: Codable {
         return tagsValue.map { $0.uppercased() }.joined(separator: " · ")
     }
 }
-
-

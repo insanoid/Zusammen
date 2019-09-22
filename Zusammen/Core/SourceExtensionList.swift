@@ -43,14 +43,13 @@ struct SourceExtensionList: Codable {
             extensionOne.name < extensionTwo.name
         })
     }
-    
-    
+
     /// Fetch all the unique tags in the source extensions provided.
     ///
     /// - Parameter inExtensions: Source extensions from which tags need to be considered.
     /// - Returns: Unique and alphabetically sorted tags.
     static func uniqueTags(inExtensions: [SourceExtension]) -> [String] {
-        let allTags = inExtensions.compactMap{ $0.tags }
+        let allTags = inExtensions.compactMap { $0.tags }
         return Array(Set(Array(allTags.joined()))).sorted()
     }
 }

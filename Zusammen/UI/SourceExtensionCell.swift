@@ -55,12 +55,12 @@ class SourceExtensionCell: NSTableCellView {
 
         taglineLabel.alphaValue = 0.7
 
-        let titleString = NSMutableAttributedString.init(string: extensionValue.name)
+        let titleString = NSMutableAttributedString(string: extensionValue.name)
         if let installationDescription = currentSourceExtension?.installationType.description() {
             let installationInformation = " · \(installationDescription.uppercased())"
-            let font = NSFont.init(name: "Verdana-Bold", size: 9)
-            let subtleTextAttribute: [NSAttributedString.Key: Any] = [ .font: font!,
-                                                                       .foregroundColor: NSColor.systemGray]
+            let font = NSFont(name: "Verdana-Bold", size: 9)
+            let subtleTextAttribute: [NSAttributedString.Key: Any] = [.font: font!,
+                                                                      .foregroundColor: NSColor.systemGray]
             let attributedString = NSAttributedString(string: installationInformation, attributes: subtleTextAttribute)
             titleString.append(attributedString)
         }

@@ -15,7 +15,7 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
     @IBOutlet var searchField: NSSearchField!
     @IBOutlet var versionSegmentControl: NSSegmentedControl!
     @IBOutlet var tagsComboBox: NSComboBox!
-    
+
     var uniqueTags: [String]?
 
     var extensionsList: [SourceExtension]?
@@ -32,7 +32,7 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
         loadInitialData()
         loadData()
     }
-    
+
     func loadInitialData() {
         let allExtensions = try! SourceExtensionListLoader.getExtensions(nil)
         uniqueTags = SourceExtensionList.uniqueTags(inExtensions: allExtensions)
@@ -40,7 +40,7 @@ class ExtensionsListViewController: NSViewController, WKUIDelegate, WKNavigation
     }
 
     func loadData() {
-        let selectedTag = self.tagsComboBox.stringValue == "All Tags" ? nil : self.tagsComboBox.stringValue
+        let selectedTag = tagsComboBox.stringValue == "All Tags" ? nil : tagsComboBox.stringValue
         extensionsList = try! SourceExtensionListLoader.getExtensions(searchField.stringValue,
                                                                       versionSegmentControl.selectedSegment == 1,
                                                                       selectedTag)

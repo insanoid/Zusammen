@@ -32,6 +32,7 @@ class SourceExtensionContentView: NSView {
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
+
         resetView()
     }
 
@@ -159,12 +160,21 @@ extension SourceExtensionContentView {
 /// Webview related functions grouped together in a single extension.
 extension SourceExtensionContentView: WKUIDelegate, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
+        defer {
+            if webView == self.webView {
+                hideLoadingWebView()
+            }
+        }
+
         guard let url = webView.url, url.host == "github.com" else {
             return
         }
         // This script removes the header from github and just keeps the readme for the user to read.
         let script = try! FileHelper.loadFileFromBundle(filename: "GithubHeaderRemovalScript", fileExtension: "js")
         webView.evaluateJavaScript(script)
+    }
+
+    func webView(_ webView: WKWebView, didFail _: WKNavigation!, withError _: Error) {
         if webView == self.webView {
             hideLoadingWebView()
         }
